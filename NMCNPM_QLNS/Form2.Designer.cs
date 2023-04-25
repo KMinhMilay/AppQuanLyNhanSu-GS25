@@ -149,7 +149,7 @@
             this.displayNamelabel.Name = "displayNamelabel";
             this.displayNamelabel.Size = new System.Drawing.Size(141, 35);
             this.displayNamelabel.TabIndex = 5;
-            this.displayNamelabel.Text = "Tên quản lý";
+            this.displayNamelabel.Text = "Tên quản lý dweewewewew\\";
             // 
             // pictureBox2
             // 
@@ -191,6 +191,7 @@
             this.MinimizeBox = false;
             this.Name = "Form2";
             this.Text = "Hệ thống quản lý nhân sự GS25";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -13,7 +13,7 @@ namespace NMCNPM_QLNS
 {
     public partial class Form1 : Form
     {
-        public static string displayName = "";
+        public static string displayname = "";
         string LoadDisplayName(string userName, string passWord)
         {
             return AccountDAO.Instance.LoadAccountDisplayname(userName, passWord);
@@ -31,7 +31,7 @@ namespace NMCNPM_QLNS
         }
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "Tên quản lý")
+            if (textBox2.Text == "Tên tài khoản")
             {
                 textBox2.Text = "";
                 textBox2.ForeColor = Color.FromArgb(0, 124, 255);
@@ -42,7 +42,7 @@ namespace NMCNPM_QLNS
         {
             if (textBox2.Text == "")
             {
-                textBox2.Text = "Tên quản lý";
+                textBox2.Text = "Tên tài khoản";
                 textBox2.ForeColor = Color.FromArgb(0, 212, 234);
             }
         }
@@ -89,17 +89,27 @@ namespace NMCNPM_QLNS
         {
             string userName = textBox2.Text;
             string passWord = textBox3.Text;
-            if (LoginAccountNVVP(userName, passWord))
+            if ( textBox2.Text == "Tên tài khoản" || textBox3.Text == "Mật khẩu" )
             {
-                displayName = LoadDisplayName(userName, passWord);
-                OpenChildForm(new Form2());
+                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu", "Warning");
             }
             else
             {
-                textBox2.Clear();
-                textBox3.Clear();
-                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu, Mời bạn nhập lại!!!", "Warning");
+                if (LoginAccountNVVP(userName, passWord))
+                {
+                    displayname=LoadDisplayName(userName, passWord);
+                    textBox3.Clear();
+                    OpenChildForm(new Form2());
+
+                }
+                else
+                {
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu, Mời bạn nhập lại!!!", "Warning");
+                }
             }
+
 
         }
         private Form currentFormChild;
