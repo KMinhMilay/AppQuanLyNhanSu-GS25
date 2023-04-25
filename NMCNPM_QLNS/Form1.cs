@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NMCNPM_QLNS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,16 @@ namespace NMCNPM_QLNS
 {
     public partial class Form1 : Form
     {
+        public static string displayName = "";
+        string LoadDisplayName(string userName, string passWord)
+        {
+            return AccountDAO.Instance.LoadAccountDisplayname(userName, passWord);
+        }
+        bool LoginAccountNVVP(string userName, string passWord)
+        {
+
+            return AccountDAO.Instance.LoginAccountNVVP(userName, passWord);
+        }
         public Form1()
         {
             InitializeComponent();
@@ -76,7 +87,20 @@ namespace NMCNPM_QLNS
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Form2());
+            string userName = textBox2.Text;
+            string passWord = textBox3.Text;
+            if (LoginAccountNVVP(userName, passWord))
+            {
+                displayName = LoadDisplayName(userName, passWord);
+                OpenChildForm(new Form2());
+            }
+            else
+            {
+                textBox2.Clear();
+                textBox3.Clear();
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu, Mời bạn nhập lại!!!", "Warning");
+            }
+
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)

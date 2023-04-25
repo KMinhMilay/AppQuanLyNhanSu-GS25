@@ -66,7 +66,17 @@ namespace NMCNPM_QLNS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult option = MessageBox.Show("Bạn có chắc muốn thoát chương trình và đăng xuất không ?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (option == DialogResult.Yes)
+            {
+                currentFormChild.Close();
+                this.Close();
+            }
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            label2.Text = Form1.displayName;
+
         }
     }
 }
