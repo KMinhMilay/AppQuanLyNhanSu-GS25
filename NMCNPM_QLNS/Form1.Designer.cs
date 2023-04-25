@@ -217,6 +217,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hệ thống quản lý nhân sự GS25";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

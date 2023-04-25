@@ -128,5 +128,7 @@ namespace NMCNPM_QLNS
             childForm.BringToFront();
             childForm.Show();
         }
+
+
     }
 }

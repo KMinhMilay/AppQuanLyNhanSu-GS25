@@ -80,5 +80,7 @@ namespace NMCNPM_QLNS
         {
             displayNamelabel.Text = Form1.displayname;
         }
+
+
     }
 }
