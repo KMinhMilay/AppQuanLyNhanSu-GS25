@@ -75,7 +75,7 @@ namespace NMCNPM_QLNS
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            label2.Text = Form1.displayName;
+            displayNamelabel.Text = Form1.displayName;
 
         }
     }
