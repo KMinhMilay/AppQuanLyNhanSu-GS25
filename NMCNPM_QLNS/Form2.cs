@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NMCNPM_QLNS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace NMCNPM_QLNS
             button4.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.FlatAppearance.BorderSize = 0;
-            OpenChildForm(new Form3());
+
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -48,6 +49,8 @@ namespace NMCNPM_QLNS
         private void button2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Form3());
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -72,13 +75,13 @@ namespace NMCNPM_QLNS
             {
                 currentFormChild.Close();
                 this.Close();
-                
             }
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             displayNamelabel.Text = Form1.displayname;
+
         }
 
 

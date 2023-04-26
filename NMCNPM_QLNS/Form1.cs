@@ -127,6 +127,7 @@ namespace NMCNPM_QLNS
             panel1.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
         }
 
 

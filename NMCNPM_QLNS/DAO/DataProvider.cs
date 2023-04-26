@@ -19,7 +19,7 @@ namespace NMCNPM_QLNS.DAO
         }
 
         private DataProvider() { }
-        //LAPTOP-G0K1DP8U\KHANHMINHSQL DESKTOP-7P5QA2G
+        //LAPTOP-G0K1DP8U\KHANHMINHSQL 
         private string connectionSTR = @"Data Source=LAPTOP-G0K1DP8U\KHANHMINHSQL;Initial Catalog=GS25;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
