@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\ChucVu_QueQuan_HopDong_Note_DAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="Form1.cs">

@@ -17,7 +17,7 @@ namespace NMCNPM_QLNS
         {
             InitializeComponent();
             loadEmployeeListView(employeeListView);
-
+            addCBX_ChucVu_QueQuan_HopDong_Note();
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -58,13 +58,38 @@ namespace NMCNPM_QLNS
             comboBox3.SelectedIndex = -1;   
             comboBox4.SelectedIndex = -1;
         }
-
+        private void addCBX_ChucVu_QueQuan_HopDong_Note()
+        {
+            DataTable chucvuList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadChucVuList();
+            foreach (DataRow item in chucvuList.Rows)
+            {
+                comboBox2.Items.Add(item[0].ToString());
+            }
+            chucvuList.Clear();
+            DataTable quequanList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadQueQuanList();
+            foreach (DataRow item in quequanList.Rows)
+            {
+                comboBox3.Items.Add(item[0].ToString());
+            }
+            quequanList.Clear();
+            DataTable hopdongList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadHopDongList();
+            foreach (DataRow item in hopdongList.Rows)
+            {
+                comboBox4.Items.Add(item[0].ToString());
+            }
+            hopdongList.Clear();
+            DataTable noteList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadNoteList();
+            foreach (DataRow item in noteList.Rows)
+            {
+                comboBox1.Items.Add(item[0].ToString());
+            }
+            noteList.Clear();
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Form7());
         }
-
         private void employeeListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             ItemComparer sorter = employeeListView.ListViewItemSorter as ItemComparer;
@@ -92,12 +117,45 @@ namespace NMCNPM_QLNS
             }
             employeeListView.Sort();
         }
-
-
         private void button5_Click(object sender, EventArgs e)
         {
             clearInput();
             refreshEmployeeList();
+        }
+
+        private void employeeListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(employeeListView.SelectedItems.Count > 0)
+            {
+                textBox1.Text = employeeListView.FocusedItem.SubItems[0].Text.ToString();
+                comboBox2.SelectedIndex = comboBox2.FindStringExact(employeeListView.FocusedItem.SubItems[1].Text);
+                textBox3.Text = employeeListView.FocusedItem.SubItems[2].Text.ToString();
+                textBox4.Text = employeeListView.FocusedItem.SubItems[3].Text.ToString();
+
+                string checkNamNu = employeeListView.FocusedItem.SubItems[4].Text.ToString();
+                if( checkNamNu == "Nam" || radioButton1.Checked==false)
+                {
+                    radioButton1.AutoCheck = true;
+                    radioButton2.AutoCheck = false;
+                }
+                else if( checkNamNu == "Nữ" || radioButton2.Checked == false)
+                {
+                    radioButton1.AutoCheck = false;
+                    radioButton2.AutoCheck = true;
+                }
+                else
+                {
+                    radioButton1.AutoCheck = true;
+                    radioButton2.AutoCheck = true;
+                }
+
+                string date = employeeListView.FocusedItem.SubItems[5].Text.ToString();
+                dateTimePicker1.Value = DateTime.Parse(date);
+
+                comboBox3.SelectedIndex = comboBox3.FindStringExact(employeeListView.FocusedItem.SubItems[6].Text);
+                comboBox4.SelectedIndex = comboBox4.FindStringExact(employeeListView.FocusedItem.SubItems[8].Text);
+                comboBox1.SelectedIndex = comboBox1.FindStringExact(employeeListView.FocusedItem.SubItems[7].Text);
+            }
         }
     }
 }

@@ -27,6 +27,7 @@ namespace NMCNPM_QLNS
             button4.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.FlatAppearance.BorderSize = 0;
+            OpenChildForm(new Form3());
 
         }
         private Form currentFormChild;
