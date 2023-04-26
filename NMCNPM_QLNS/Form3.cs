@@ -13,6 +13,7 @@ namespace NMCNPM_QLNS
 {
     public partial class Form3 : Form
     {
+
         public Form3()
         {
             InitializeComponent();
@@ -48,11 +49,13 @@ namespace NMCNPM_QLNS
         private void clearInput()
         {
             textBox1.Clear();
+            textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;   
+
+            rdNam.Checked = false;
+            rdNu.Checked = false;   
             comboBox1.SelectedIndex = -1;
             comboBox2.SelectedIndex = -1;   
             comboBox3.SelectedIndex = -1;   
@@ -131,23 +134,7 @@ namespace NMCNPM_QLNS
                 comboBox2.SelectedIndex = comboBox2.FindStringExact(employeeListView.FocusedItem.SubItems[1].Text);
                 textBox3.Text = employeeListView.FocusedItem.SubItems[2].Text.ToString();
                 textBox4.Text = employeeListView.FocusedItem.SubItems[3].Text.ToString();
-
-                string checkNamNu = employeeListView.FocusedItem.SubItems[4].Text.ToString();
-                if( checkNamNu == "Nam" || radioButton1.Checked==false)
-                {
-                    radioButton1.AutoCheck = true;
-                    radioButton2.AutoCheck = false;
-                }
-                else if( checkNamNu == "Nữ" || radioButton2.Checked == false)
-                {
-                    radioButton1.AutoCheck = false;
-                    radioButton2.AutoCheck = true;
-                }
-                else
-                {
-                    radioButton1.AutoCheck = true;
-                    radioButton2.AutoCheck = true;
-                }
+                textBox2.Text = employeeListView.FocusedItem.SubItems[4].Text.ToString();
 
                 string date = employeeListView.FocusedItem.SubItems[5].Text.ToString();
                 dateTimePicker1.Value = DateTime.Parse(date);
@@ -156,6 +143,17 @@ namespace NMCNPM_QLNS
                 comboBox4.SelectedIndex = comboBox4.FindStringExact(employeeListView.FocusedItem.SubItems[8].Text);
                 comboBox1.SelectedIndex = comboBox1.FindStringExact(employeeListView.FocusedItem.SubItems[7].Text);
             }
+        }
+
+        private void rdNam_CheckedChanged(object sender, EventArgs e)
+        {
+
+            //rdNam.Checked = false;
+        }
+
+        private void rdNu_CheckedChanged(object sender, EventArgs e)
+        {
+        //    rdNu.Checked = false;
         }
     }
 }
