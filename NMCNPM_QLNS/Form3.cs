@@ -136,6 +136,14 @@ namespace NMCNPM_QLNS
                 textBox4.Text = employeeListView.FocusedItem.SubItems[3].Text.ToString();
                 textBox2.Text = employeeListView.FocusedItem.SubItems[4].Text.ToString();
 
+                if (rdNu.Checked == true)
+                {
+                    rdNu.Checked = false;
+                }
+                if( rdNam.Checked == true)
+                {
+                    rdNam.Checked = false;
+                }
                 string date = employeeListView.FocusedItem.SubItems[5].Text.ToString();
                 dateTimePicker1.Value = DateTime.Parse(date);
 
@@ -145,15 +153,13 @@ namespace NMCNPM_QLNS
             }
         }
 
-        private void rdNam_CheckedChanged(object sender, EventArgs e)
+        private void rdNu_Click(object sender, EventArgs e)
         {
-
-            //rdNam.Checked = false;
+            textBox2.Text = "Nữ";
         }
-
-        private void rdNu_CheckedChanged(object sender, EventArgs e)
+        private void rdNam_Click(object sender, EventArgs e)
         {
-        //    rdNu.Checked = false;
+            textBox2.Text = "Nam";
         }
     }
 }

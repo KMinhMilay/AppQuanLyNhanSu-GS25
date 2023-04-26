@@ -55,6 +55,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -67,7 +68,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.rdNam = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -348,6 +348,16 @@
             this.panel1.Size = new System.Drawing.Size(1200, 750);
             this.panel1.TabIndex = 0;
             // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox2.Location = new System.Drawing.Point(384, 685);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(135, 22);
+            this.textBox2.TabIndex = 44;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -479,7 +489,7 @@
             this.rdNu.TabIndex = 16;
             this.rdNu.Text = "Nữ";
             this.rdNu.UseVisualStyleBackColor = true;
-            this.rdNu.CheckedChanged += new System.EventHandler(this.rdNu_CheckedChanged);
+            this.rdNu.Click += new System.EventHandler(this.rdNu_Click);
             // 
             // rdNam
             // 
@@ -491,17 +501,7 @@
             this.rdNam.TabIndex = 15;
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
-            this.rdNam.CheckedChanged += new System.EventHandler(this.rdNam_CheckedChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(384, 685);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(135, 22);
-            this.textBox2.TabIndex = 44;
+            this.rdNam.Click += new System.EventHandler(this.rdNam_Click);
             // 
             // Form3
             // 
