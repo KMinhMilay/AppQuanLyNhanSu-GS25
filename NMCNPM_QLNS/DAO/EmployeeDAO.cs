@@ -100,11 +100,11 @@ namespace NMCNPM_QLNS.DAO
                 return true;
             }else { return false; }
         }
-        public void changeEmployeeInfo(string nvID, string ChucVu, string nvHo, string nvTen, string nvGioiTinh, string nvNgaySinh,string nvQueQuan , string TTNV, string HopDong)
+        public void changeEmployeeInfo(string ChucVu, string nvHo, string nvTen, string nvGioiTinh, string nvNgaySinh,string nvQueQuan , string TTNV, string HopDong, string nvID)
         {
 
-            string query = "update NHANVIEN set nvID = CAST( @nvID AS bigint) , ChucVu = @ChucVu , nvHo = @nvHo , nvTen = @nvTen , nvGioiTinh = @nvGioiTinh , nvNgaySinh = CAST( @nvNgaySinh AS DATE) , nvQueQuan = @nvQueQuan , TTNV = @TTNV , HopDong = @HopDong ";
-            int data = DataProvider.Instance.ExecuteNonQuery(query , new object[] {nvID, ChucVu, nvHo, nvTen, nvGioiTinh,nvNgaySinh , nvQueQuan, TTNV, HopDong});
+            string query = "update NHANVIEN set ChucVu = @ChucVu , nvHo = @nvHo , nvTen = @nvTen , nvGioiTinh = @nvGioiTinh , nvNgaySinh = CAST( @nvNgaySinh AS DATE) , nvQueQuan = @nvQueQuan , TTNV = @TTNV , HopDong = @HopDong where nvID = CAST( @nvID AS bigint)  ";
+            int data = DataProvider.Instance.ExecuteNonQuery(query , new object[] { ChucVu, nvHo, nvTen, nvGioiTinh,nvNgaySinh , nvQueQuan, TTNV, HopDong , nvID});
             if(data>0)
             {
                 MessageBox.Show("Cập nhật thông tin nhân viên thành công. Vui lòng ấn refresh để cập nhật Danh sách","Thành công thêm nhân viên");

@@ -40,18 +40,18 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IDtxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Hotxb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Tentxb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Notecbx = new System.Windows.Forms.ComboBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,16 +60,16 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.GioiTinhtxb = new System.Windows.Forms.TextBox();
+            this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.HopDongtxb = new System.Windows.Forms.ComboBox();
+            this.QueQuancbx = new System.Windows.Forms.ComboBox();
+            this.ChucVucbx = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ChangeBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.AddBtn = new System.Windows.Forms.Button();
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.rdNam = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
@@ -180,13 +180,14 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "ID nhân viên";
             // 
-            // textBox1
+            // IDtxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(209, 486);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 22);
-            this.textBox1.TabIndex = 7;
+            this.IDtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDtxt.Location = new System.Drawing.Point(209, 486);
+            this.IDtxt.Name = "IDtxt";
+            this.IDtxt.ReadOnly = true;
+            this.IDtxt.Size = new System.Drawing.Size(310, 22);
+            this.IDtxt.TabIndex = 7;
             // 
             // label3
             // 
@@ -208,13 +209,13 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Họ và tên đệm nhân viên";
             // 
-            // textBox3
+            // Hotxb
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(294, 586);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 22);
-            this.textBox3.TabIndex = 11;
+            this.Hotxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hotxb.Location = new System.Drawing.Point(294, 586);
+            this.Hotxb.Name = "Hotxb";
+            this.Hotxb.Size = new System.Drawing.Size(225, 22);
+            this.Hotxb.TabIndex = 11;
             // 
             // label5
             // 
@@ -226,13 +227,13 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Tên nhân viên";
             // 
-            // textBox4
+            // Tentxb
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(221, 636);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(298, 22);
-            this.textBox4.TabIndex = 13;
+            this.Tentxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tentxb.Location = new System.Drawing.Point(221, 636);
+            this.Tentxb.Name = "Tentxb";
+            this.Tentxb.Size = new System.Drawing.Size(298, 22);
+            this.Tentxb.TabIndex = 13;
             // 
             // label6
             // 
@@ -284,15 +285,15 @@
             this.label7.TabIndex = 23;
             this.label7.Text = "Note";
             // 
-            // comboBox1
+            // Notecbx
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(729, 584);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(330, 24);
-            this.comboBox1.TabIndex = 24;
+            this.Notecbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Notecbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notecbx.FormattingEnabled = true;
+            this.Notecbx.Location = new System.Drawing.Point(729, 584);
+            this.Notecbx.Name = "Notecbx";
+            this.Notecbx.Size = new System.Drawing.Size(330, 24);
+            this.Notecbx.TabIndex = 24;
             // 
             // textBox5
             // 
@@ -323,19 +324,19 @@
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox4);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.GioiTinhtxb);
+            this.panel1.Controls.Add(this.dateTimePickerNgaySinh);
+            this.panel1.Controls.Add(this.HopDongtxb);
+            this.panel1.Controls.Add(this.QueQuancbx);
+            this.panel1.Controls.Add(this.ChucVucbx);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.ChangeBtn);
+            this.panel1.Controls.Add(this.DeleteBtn);
+            this.panel1.Controls.Add(this.AddBtn);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.Notecbx);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
@@ -343,12 +344,12 @@
             this.panel1.Controls.Add(this.rdNu);
             this.panel1.Controls.Add(this.rdNam);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.Tentxb);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.Hotxb);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.IDtxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.employeeListView);
             this.panel1.Controls.Add(this.label1);
@@ -413,57 +414,57 @@
             this.label12.TabIndex = 45;
             this.label12.Text = "Tìm kiếm:";
             // 
-            // textBox2
+            // GioiTinhtxb
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(384, 685);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(135, 22);
-            this.textBox2.TabIndex = 44;
+            this.GioiTinhtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GioiTinhtxb.ForeColor = System.Drawing.Color.DimGray;
+            this.GioiTinhtxb.Location = new System.Drawing.Point(384, 685);
+            this.GioiTinhtxb.Name = "GioiTinhtxb";
+            this.GioiTinhtxb.ReadOnly = true;
+            this.GioiTinhtxb.Size = new System.Drawing.Size(135, 22);
+            this.GioiTinhtxb.TabIndex = 44;
             // 
-            // dateTimePicker1
+            // dateTimePickerNgaySinh
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(773, 486);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker1.Size = new System.Drawing.Size(285, 22);
-            this.dateTimePicker1.TabIndex = 43;
+            this.dateTimePickerNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(773, 486);
+            this.dateTimePickerNgaySinh.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
+            this.dateTimePickerNgaySinh.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(285, 22);
+            this.dateTimePickerNgaySinh.TabIndex = 43;
             // 
-            // comboBox4
+            // HopDongtxb
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(811, 634);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(248, 24);
-            this.comboBox4.TabIndex = 42;
+            this.HopDongtxb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HopDongtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HopDongtxb.FormattingEnabled = true;
+            this.HopDongtxb.Location = new System.Drawing.Point(811, 634);
+            this.HopDongtxb.Name = "HopDongtxb";
+            this.HopDongtxb.Size = new System.Drawing.Size(248, 24);
+            this.HopDongtxb.TabIndex = 42;
             // 
-            // comboBox3
+            // QueQuancbx
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(729, 536);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(329, 24);
-            this.comboBox3.TabIndex = 41;
+            this.QueQuancbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.QueQuancbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QueQuancbx.FormattingEnabled = true;
+            this.QueQuancbx.Location = new System.Drawing.Point(729, 536);
+            this.QueQuancbx.Name = "QueQuancbx";
+            this.QueQuancbx.Size = new System.Drawing.Size(329, 24);
+            this.QueQuancbx.TabIndex = 41;
             // 
-            // comboBox2
+            // ChucVucbx
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(178, 536);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(341, 24);
-            this.comboBox2.TabIndex = 40;
+            this.ChucVucbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ChucVucbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChucVucbx.FormattingEnabled = true;
+            this.ChucVucbx.Location = new System.Drawing.Point(178, 536);
+            this.ChucVucbx.Name = "ChucVucbx";
+            this.ChucVucbx.Size = new System.Drawing.Size(341, 24);
+            this.ChucVucbx.TabIndex = 40;
             // 
             // button6
             // 
@@ -492,50 +493,50 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // ChangeBtn
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(939, 676);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 40);
-            this.button4.TabIndex = 31;
-            this.button4.Text = "Chỉnh sửa";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.ChangeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ChangeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
+            this.ChangeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangeBtn.ForeColor = System.Drawing.Color.White;
+            this.ChangeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ChangeBtn.Location = new System.Drawing.Point(939, 676);
+            this.ChangeBtn.Name = "ChangeBtn";
+            this.ChangeBtn.Size = new System.Drawing.Size(120, 40);
+            this.ChangeBtn.TabIndex = 31;
+            this.ChangeBtn.Text = "Chỉnh sửa";
+            this.ChangeBtn.UseVisualStyleBackColor = false;
+            this.ChangeBtn.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button2
+            // DeleteBtn
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(798, 676);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 40);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.DeleteBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
+            this.DeleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DeleteBtn.Location = new System.Drawing.Point(798, 676);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(100, 40);
+            this.DeleteBtn.TabIndex = 30;
+            this.DeleteBtn.Text = "Xóa";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // AddBtn
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(648, 676);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 40);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.AddBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
+            this.AddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddBtn.ForeColor = System.Drawing.Color.White;
+            this.AddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddBtn.Location = new System.Drawing.Point(648, 676);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(100, 40);
+            this.AddBtn.TabIndex = 29;
+            this.AddBtn.Text = "Thêm";
+            this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // rdNu
             // 
@@ -589,35 +590,35 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox IDtxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Hotxb;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Tentxb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Notecbx;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ChangeBtn;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox QueQuancbx;
+        private System.Windows.Forms.ComboBox ChucVucbx;
+        private System.Windows.Forms.ComboBox HopDongtxb;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh;
         private System.Windows.Forms.RadioButton rdNu;
         private System.Windows.Forms.RadioButton rdNam;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox GioiTinhtxb;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RadioButton radioButton1;

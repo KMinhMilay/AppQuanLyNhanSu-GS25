@@ -53,43 +53,43 @@ namespace NMCNPM_QLNS
         }
         void clearInput()
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
+            IDtxt.Clear();
+            GioiTinhtxb.Clear();
+            Hotxb.Clear();
+            Tentxb.Clear();
             textBox5.Clear();
 
             rdNam.Checked = false;
             rdNu.Checked = false;   
-            comboBox1.SelectedIndex = -1;
-            comboBox2.SelectedIndex = -1;   
-            comboBox3.SelectedIndex = -1;   
-            comboBox4.SelectedIndex = -1;
+            Notecbx.SelectedIndex = -1;
+            ChucVucbx.SelectedIndex = -1;   
+            QueQuancbx.SelectedIndex = -1;   
+            HopDongtxb.SelectedIndex = -1;
         }
         void addCBX_ChucVu_QueQuan_HopDong_Note()
         {
             DataTable chucvuList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadChucVuList();
             foreach (DataRow item in chucvuList.Rows)
             {
-                comboBox2.Items.Add(item[0].ToString());
+                ChucVucbx.Items.Add(item[0].ToString());
             }
             chucvuList.Clear();
             DataTable quequanList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadQueQuanList();
             foreach (DataRow item in quequanList.Rows)
             {
-                comboBox3.Items.Add(item[0].ToString());
+                QueQuancbx.Items.Add(item[0].ToString());
             }
             quequanList.Clear();
             DataTable hopdongList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadHopDongList();
             foreach (DataRow item in hopdongList.Rows)
             {
-                comboBox4.Items.Add(item[0].ToString());
+                HopDongtxb.Items.Add(item[0].ToString());
             }
             hopdongList.Clear();
             DataTable noteList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadNoteList();
             foreach (DataRow item in noteList.Rows)
             {
-                comboBox1.Items.Add(item[0].ToString());
+                Notecbx.Items.Add(item[0].ToString());
             }
             noteList.Clear();
         }
@@ -139,11 +139,11 @@ namespace NMCNPM_QLNS
         {
             if(employeeListView.SelectedItems.Count > 0)
             {
-                textBox1.Text = employeeListView.FocusedItem.SubItems[0].Text.ToString();
-                comboBox2.SelectedIndex = comboBox2.FindStringExact(employeeListView.FocusedItem.SubItems[1].Text);
-                textBox3.Text = employeeListView.FocusedItem.SubItems[2].Text.ToString();
-                textBox4.Text = employeeListView.FocusedItem.SubItems[3].Text.ToString();
-                textBox2.Text = employeeListView.FocusedItem.SubItems[4].Text.ToString();
+                IDtxt.Text = employeeListView.FocusedItem.SubItems[0].Text.ToString();
+                ChucVucbx.SelectedIndex = ChucVucbx.FindStringExact(employeeListView.FocusedItem.SubItems[1].Text);
+                Hotxb.Text = employeeListView.FocusedItem.SubItems[2].Text.ToString();
+                Tentxb.Text = employeeListView.FocusedItem.SubItems[3].Text.ToString();
+                GioiTinhtxb.Text = employeeListView.FocusedItem.SubItems[4].Text.ToString();
 
                 if (rdNu.Checked == true)
                 {
@@ -154,20 +154,20 @@ namespace NMCNPM_QLNS
                     rdNam.Checked = false;
                 }
                 string date = employeeListView.FocusedItem.SubItems[5].Text.ToString();
-                dateTimePicker1.Value = DateTime.Parse(date);
+                dateTimePickerNgaySinh.Value = DateTime.Parse(date);
 
-                comboBox3.SelectedIndex = comboBox3.FindStringExact(employeeListView.FocusedItem.SubItems[6].Text);
-                comboBox4.SelectedIndex = comboBox4.FindStringExact(employeeListView.FocusedItem.SubItems[8].Text);
-                comboBox1.SelectedIndex = comboBox1.FindStringExact(employeeListView.FocusedItem.SubItems[7].Text);
+                QueQuancbx.SelectedIndex = QueQuancbx.FindStringExact(employeeListView.FocusedItem.SubItems[6].Text);
+                HopDongtxb.SelectedIndex = HopDongtxb.FindStringExact(employeeListView.FocusedItem.SubItems[8].Text);
+                Notecbx.SelectedIndex = Notecbx.FindStringExact(employeeListView.FocusedItem.SubItems[7].Text);
             }
         }
         private void rdNu_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "Nữ";
+            GioiTinhtxb.Text = "Nữ";
         }
         private void rdNam_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "Nam";
+            GioiTinhtxb.Text = "Nam";
         }
         private void button2_Click(object sender, EventArgs e) //Xoa Nhan Vien
         {
@@ -180,9 +180,9 @@ namespace NMCNPM_QLNS
                 DialogResult deleteUserWarning = MessageBox.Show("Bạn có muốn xóa người dùng này không?", "Cảnh báo", MessageBoxButtons.YesNo);
                 if(deleteUserWarning == DialogResult.Yes )
                 {
-                    if (!string.IsNullOrWhiteSpace(textBox1.Text))
+                    if (!string.IsNullOrWhiteSpace(IDtxt.Text))
                     {
-                        EmployeeDAO.Instance.deleteEmployee(textBox1.Text);
+                        EmployeeDAO.Instance.deleteEmployee(IDtxt.Text);
                         refreshEmployeeList();
                     }
                 }
@@ -221,7 +221,7 @@ namespace NMCNPM_QLNS
 
             if (result == DialogResult.Yes)
             {
-                EmployeeDAO.Instance.changeEmployeeInfo(textBox1.Text,comboBox2.Text,textBox3.Text,textBox4.Text,textBox2.Text,dateTimePicker1.Value.ToString("MM-dd-yyyy"),comboBox3.Text,comboBox4.Text,comboBox1.Text);
+                EmployeeDAO.Instance.changeEmployeeInfo(ChucVucbx.Text,Hotxb.Text,Tentxb.Text,GioiTinhtxb.Text,dateTimePickerNgaySinh.Value.ToString("MM-dd-yyyy"),QueQuancbx.Text,Notecbx.Text,HopDongtxb.Text,IDtxt.Text);
 
                 refreshEmployeeList();
 
