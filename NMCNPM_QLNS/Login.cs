@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace NMCNPM_QLNS
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         public static string displayname = "";
         string LoadDisplayName(string userName, string passWord)
@@ -23,7 +23,7 @@ namespace NMCNPM_QLNS
 
             return AccountDAO.Instance.LoginAccountNVVP(userName, passWord);
         }
-        public Form1()
+        public Login()
         {
             InitializeComponent();
             button2.FlatStyle = FlatStyle.Flat;
@@ -99,7 +99,7 @@ namespace NMCNPM_QLNS
                 {
                     displayname=LoadDisplayName(userName, passWord);
                     textBox3.Clear();
-                    OpenChildForm(new Form2());
+                    OpenChildForm(new MenuButton());
 
                 }
                 else

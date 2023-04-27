@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,7 +56,115 @@ namespace NMCNPM_QLNS.DAO
             }
 
         }
+        public void deleteEmployee(string employeeID)
+        {
+            string query = "USP_deleteEmployee @nvID";
+            int data = DataProvider.Instance.ExecuteNonQuery(query , new object[] {employeeID});
+            if(data>0) {
+                MessageBox.Show("Xóa thông tin nhân viên thành công");
+            }
+        }
+        public bool addNewEmployee(string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh, string nvQueQuan , string nvNgaySinh, string TTNV , string HopDong)
+        {
+            string checkExist = "select * from NHANVIEN where nvID = @nvID";
+            DataTable tmp = DataProvider.Instance.ExecuteQuery(checkExist, new object[] { nvID });
+            if(tmp.Rows.Count > 0)
+            {
+                MessageBox.Show("Không thể thêm thông tin nhân viên do đã tồn tại một nhân viên với ID là " + nvID);
+                return false;
+            }
+            else
+            {
+                string query = "USP_addNewEmployee @nvID , @ChucVu , @nvHo , @nvTen , @nvGioiTinh , @nvNgaySinh , @nvQueQuan , @TTNV , @HopDong";
+                int data = DataProvider.Instance.ExecuteNonQuery (query , new object[] { nvID, ChucVu, nvHo, nvTen, nvGioiTinh, nvQueQuan, nvNgaySinh, TTNV, HopDong });
+                if(data>0)
+                {
+                    MessageBox.Show("Thêm thông tin nhân viên thành công");
 
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Đã xảy ra lỗi khi thêm thông tin nhân viên");
+
+                    return false;
+                }
+            }
+        }
+        public bool existEmployee(string employeeID)
+        {
+            string query = "select * from NHANVIEN where nvID = @employeeID";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query , new object[] {employeeID});
+            if(data.Rows.Count>0)
+            {
+                return true;
+            }else { return false; }
+        }
+        public void changeEmployeeInfo(string nvID, string ChucVu, string nvHo, string nvTen, string nvGioiTinh, string nvQueQuan, string nvNgaySinh, string TTNV, string HopDong)
+        {
+            string query = "USP_changeEmployeeInfo @nvID , @ChucVu , @nvHo , @nvTen , @nvGioiTinh , @nvNgaySinh , @nvQueQuan , @TTNV , @HopDong";
+            int data = DataProvider.Instance.ExecuteNonQuery(query , new object[] {nvID, ChucVu, nvHo, nvTen, nvGioiTinh, nvQueQuan, nvNgaySinh, TTNV, HopDong});
+            if(data>0)
+            {
+                MessageBox.Show("Cập nhật thông tin nhân viên thành công");
+            }
+            else
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin nhân viên");
+            }
+        }
+        public void loadSpecificEmployeeList(ListView listView,int type,string sreachValue)
+        {
+            string query;
+            DataTable data = new DataTable();
+
+            if(type == 1)
+            {
+                query = "select * from NHANVIEN where nvID like '%' + @nvID + '%'";
+                data = DataProvider.Instance.ExecuteQuery(query, new object[] { sreachValue });
+            }
+            else if(type == 2)
+            {
+                query = "select * from NHANVIEN where ChucVu like '%' + @ChucVu + '%'";
+                data = DataProvider.Instance.ExecuteQuery(query, new object[] { sreachValue });
+            }
+            else if (type == 3)
+            {
+                query = "select * from NHANVIEN where TTNV like '%' + @TTNV + '%'";
+                data = DataProvider.Instance.ExecuteQuery(query, new object[] { sreachValue });
+            }
+            foreach (DataRow row in data.Rows)
+            {
+                ListViewItem item = new ListViewItem(row[0].ToString());
+                for (int i = 1; i < data.Columns.Count; i++)
+                {
+                    if (i == 5)
+                    {
+                        string tmp = row[i].ToString();
+                        if (tmp.Length == 20)
+                        {
+                            tmp = tmp.Substring(0, 8);
+                        }
+                        else if (tmp.Length == 21)
+                        {
+                            tmp = tmp.Substring(0, 9);
+                        }
+                        else if (tmp.Length == 22)
+                        {
+                            tmp = tmp.Substring(0, 10);
+                        }
+                        item.SubItems.Add(tmp);
+                    }
+                    else
+                    {
+                        item.SubItems.Add(row[i].ToString());
+                    }
+
+                }
+                listView.Items.Add(item);
+            }
+
+        }
     }
 
 }

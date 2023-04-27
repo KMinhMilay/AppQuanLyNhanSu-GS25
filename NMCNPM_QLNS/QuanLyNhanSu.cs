@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace NMCNPM_QLNS
 {
-    public partial class Form3 : Form
+    public partial class QuanLyNhanSu : Form
     {
-
-        public Form3()
+        int type = 1;
+        public QuanLyNhanSu()
         {
             InitializeComponent();
             loadEmployeeListView(employeeListView);
@@ -37,16 +37,19 @@ namespace NMCNPM_QLNS
             childForm.Show();
 
         }
+
+
+
         void loadEmployeeListView(ListView listView)
         {
             EmployeeDAO.Instance.loadEmployeeList(listView);
         }
-        private void refreshEmployeeList()
+        void refreshEmployeeList()
         {
             employeeListView.Items.Clear();
             EmployeeDAO.Instance.loadEmployeeList(employeeListView);
         }
-        private void clearInput()
+        void clearInput()
         {
             textBox1.Clear();
             textBox2.Clear();
@@ -61,7 +64,7 @@ namespace NMCNPM_QLNS
             comboBox3.SelectedIndex = -1;   
             comboBox4.SelectedIndex = -1;
         }
-        private void addCBX_ChucVu_QueQuan_HopDong_Note()
+        void addCBX_ChucVu_QueQuan_HopDong_Note()
         {
             DataTable chucvuList = ChucVu_QueQuan_HopDong_Note_DAO.Instance.loadChucVuList();
             foreach (DataRow item in chucvuList.Rows)
@@ -89,9 +92,14 @@ namespace NMCNPM_QLNS
             noteList.Clear();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+
+
+
+
+        private void button3_Click(object sender, EventArgs e) //Form Them Nhan Vien
         {
-            OpenChildForm(new Form7());
+            OpenChildForm(new AddNhanSu());
         }
         private void employeeListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
@@ -125,7 +133,6 @@ namespace NMCNPM_QLNS
             clearInput();
             refreshEmployeeList();
         }
-
         private void employeeListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(employeeListView.SelectedItems.Count > 0)
@@ -152,7 +159,6 @@ namespace NMCNPM_QLNS
                 comboBox1.SelectedIndex = comboBox1.FindStringExact(employeeListView.FocusedItem.SubItems[7].Text);
             }
         }
-
         private void rdNu_Click(object sender, EventArgs e)
         {
             textBox2.Text = "Nữ";
@@ -161,5 +167,52 @@ namespace NMCNPM_QLNS
         {
             textBox2.Text = "Nam";
         }
+        private void button2_Click(object sender, EventArgs e) //Xoa Nhan Vien
+        {
+            if(employeeListView.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên bạn muốn xóa");
+            }
+            else
+            {
+                DialogResult deleteUserWarning = MessageBox.Show("Bạn có muốn xóa người dùng này không?", "Cảnh báo", MessageBoxButtons.YesNo);
+                if(deleteUserWarning == DialogResult.Yes )
+                {
+                    if (!string.IsNullOrWhiteSpace(textBox1.Text))
+                    {
+                        EmployeeDAO.Instance.deleteEmployee(textBox1.Text);
+                        refreshEmployeeList();
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e) // tim kiem
+        {
+            employeeListView.Items.Clear();
+            EmployeeDAO.Instance.loadSpecificEmployeeList(employeeListView, type, textBox5.Text);
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+            label13.Text = radioButton2.Text;
+            type = 1;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            label13.Text = radioButton1.Text;
+            type = 2;
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            label13.Text = radioButton3.Text;
+            type=3;
+        }
+
+
     }
 }

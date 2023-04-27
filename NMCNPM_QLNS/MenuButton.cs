@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace NMCNPM_QLNS
 {
-    public partial class Form2 : Form
+    public partial class MenuButton : Form
     {
-        public Form2()
+        public MenuButton()
         {
             InitializeComponent();
             button1.FlatStyle = FlatStyle.Flat;
@@ -27,7 +27,7 @@ namespace NMCNPM_QLNS
             button4.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.FlatAppearance.BorderSize = 0;
-            OpenChildForm(new Form3());
+            OpenChildForm(new QuanLyNhanSu());
 
         }
         private Form currentFormChild;
@@ -49,7 +49,7 @@ namespace NMCNPM_QLNS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Form3());
+            OpenChildForm(new QuanLyNhanSu());
 
 
         }
@@ -81,7 +81,7 @@ namespace NMCNPM_QLNS
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            displayNamelabel.Text = Form1.displayname;
+            displayNamelabel.Text = Login.displayname;
 
         }
 
