@@ -58,13 +58,13 @@ namespace NMCNPM_QLNS.DAO
         }
         public void deleteEmployee(string employeeID)
         {
-            string query = "USP_deleteEmployee @nvID";
+            string query = "DELETE FROM NHANVIEN WHERE nvID = @nvID";
             int data = DataProvider.Instance.ExecuteNonQuery(query , new object[] {employeeID});
             if(data>0) {
                 MessageBox.Show("Xóa thông tin nhân viên thành công");
             }
         }
-        public bool addNewEmployee(string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh, string nvQueQuan , string nvNgaySinh, string TTNV , string HopDong)
+        public bool addNewEmployee(string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh,string nvNgaySinh, string nvQueQuan , string TTNV , string HopDong)
         {
             string checkExist = "select * from NHANVIEN where nvID = @nvID";
             DataTable tmp = DataProvider.Instance.ExecuteQuery(checkExist, new object[] { nvID });
@@ -75,11 +75,11 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                string query = "USP_addNewEmployee @nvID , @ChucVu , @nvHo , @nvTen , @nvGioiTinh , @nvNgaySinh , @nvQueQuan , @TTNV , @HopDong";
-                int data = DataProvider.Instance.ExecuteNonQuery (query , new object[] { nvID, ChucVu, nvHo, nvTen, nvGioiTinh, nvQueQuan, nvNgaySinh, TTNV, HopDong });
+                string query = "insert into NHANVIEN values ( CAST( @nvID as BIGINT) , @ChucVu , @nvHo , @nvTen , @nvGioiTinh , CAST( @nvNgaySinh as DATE) , @nvQueQuan , @TTNV , @HopDong )";
+                int data = DataProvider.Instance.ExecuteNonQuery (query , new object[] { nvID, ChucVu, nvHo, nvTen, nvGioiTinh, nvNgaySinh, nvQueQuan, TTNV, HopDong });
                 if(data>0)
                 {
-                    MessageBox.Show("Thêm thông tin nhân viên thành công");
+                    MessageBox.Show("Thêm thông tin nhân viên thành công. Vui lòng ấn refresh để cập nhật Danh sách");
 
                     return true;
                 }
@@ -100,13 +100,13 @@ namespace NMCNPM_QLNS.DAO
                 return true;
             }else { return false; }
         }
-        public void changeEmployeeInfo(string nvID, string ChucVu, string nvHo, string nvTen, string nvGioiTinh, string nvQueQuan, string nvNgaySinh, string TTNV, string HopDong)
+        public void changeEmployeeInfo(string nvID, string ChucVu, string nvHo, string nvTen, string nvGioiTinh, string nvNgaySinh,string nvQueQuan , string TTNV, string HopDong)
         {
-            string query = "USP_changeEmployeeInfo @nvID , @ChucVu , @nvHo , @nvTen , @nvGioiTinh , @nvNgaySinh , @nvQueQuan , @TTNV , @HopDong";
-            int data = DataProvider.Instance.ExecuteNonQuery(query , new object[] {nvID, ChucVu, nvHo, nvTen, nvGioiTinh, nvQueQuan, nvNgaySinh, TTNV, HopDong});
+            string query = "update NHANVIEN set nvID = CAST( @nvID AS bigint) , ChucVu = @ChucVu , nvHo = @nvHo , nvTen = @nvTen , nvGioiTinh = @nvGioiTinh , nvNgaySinh = CAST( @nvNgaySinh AS DATE) , nvQueQuan = @nvQueQuan , TTNV = @TTNV , HopDong = @HopDong ";
+            int data = DataProvider.Instance.ExecuteNonQuery(query , new object[] {nvID, ChucVu, nvHo, nvTen, nvGioiTinh,nvNgaySinh , nvQueQuan, TTNV, HopDong});
             if(data>0)
             {
-                MessageBox.Show("Cập nhật thông tin nhân viên thành công");
+                MessageBox.Show("Cập nhật thông tin nhân viên thành công. Vui lòng ấn refresh để cập nhật Danh sách","Thành công thêm nhân viên");
             }
             else
             {

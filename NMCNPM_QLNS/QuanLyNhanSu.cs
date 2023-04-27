@@ -19,6 +19,8 @@ namespace NMCNPM_QLNS
             InitializeComponent();
             loadEmployeeListView(employeeListView);
             addCBX_ChucVu_QueQuan_HopDong_Note();
+            refreshEmployeeList();
+    
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -213,6 +215,18 @@ namespace NMCNPM_QLNS
             type=3;
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về thông tin của sinh viên này không", "Cảnh báo", MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.Yes)
+            {
+                EmployeeDAO.Instance.changeEmployeeInfo(textBox1.Text,comboBox2.Text,textBox3.Text,textBox4.Text,textBox2.Text,dateTimePicker1.Value.ToString("MM-dd-yyyy"),comboBox3.Text,comboBox4.Text,comboBox1.Text);
+
+                refreshEmployeeList();
+
+                clearInput();
+            }
+        }
     }
 }

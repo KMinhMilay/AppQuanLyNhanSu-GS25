@@ -60,20 +60,23 @@ namespace NMCNPM_QLNS
             HopDongtxb.SelectedIndex = -1;
         }
 
+        
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
         //string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh, string nvQueQuan, string nvNgaySinh, string TTNV, string HopDong
         private void button3_Click(object sender, EventArgs e) // nut them
         {
-            if(string.IsNullOrWhiteSpace(IDtbx.Text)||string.IsNullOrWhiteSpace(ChucVucbx.Text) || !Namrdb.Checked || !Nurdb.Checked || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
+            if(string.IsNullOrWhiteSpace(IDtbx.Text)||string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
             }
             else
             {
-                if(EmployeeDAO.Instance.addNewEmployee(IDtbx.Text, ChucVucbx.Text, Hotxb.Text, Tentxb.Text, dateTimePicker1.Value.ToString("MM-dd-yyyy"), GioiTinhtxb.Text ,QueQuancbx.Text,Notetxb.Text,HopDongtxb.Text)==true) 
+                string date = dateTimePicker1.Value.ToString("MM-dd-yyyy");
+                if(EmployeeDAO.Instance.addNewEmployee(IDtbx.Text, ChucVucbx.Text, Hotxb.Text, Tentxb.Text,GioiTinhtxb.Text, date,  QueQuancbx.Text,Notetxb.Text,HopDongtxb.Text)==true) 
                 {
                     clearInput();
                 }
