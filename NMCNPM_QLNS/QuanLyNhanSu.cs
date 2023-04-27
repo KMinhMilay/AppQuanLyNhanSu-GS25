@@ -192,7 +192,7 @@ namespace NMCNPM_QLNS
             employeeListView.Items.Clear();
             EmployeeDAO.Instance.loadSpecificEmployeeList(employeeListView, type, textBox5.Text);
         }
-
+        //string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh, string nvQueQuan, string nvNgaySinh, string TTNV, string HopDong
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 

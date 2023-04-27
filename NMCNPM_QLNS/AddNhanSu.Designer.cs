@@ -144,6 +144,7 @@
             this.Nurdb.TabStop = true;
             this.Nurdb.Text = "Nữ";
             this.Nurdb.UseVisualStyleBackColor = true;
+            this.Nurdb.CheckedChanged += new System.EventHandler(this.Nurdb_CheckedChanged);
             // 
             // Namrdb
             // 
@@ -156,6 +157,7 @@
             this.Namrdb.TabStop = true;
             this.Namrdb.Text = "Nam";
             this.Namrdb.UseVisualStyleBackColor = true;
+            this.Namrdb.CheckedChanged += new System.EventHandler(this.Namrdb_CheckedChanged);
             // 
             // label6
             // 
