@@ -56,7 +56,7 @@ namespace NMCNPM_QLNS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Form4());
+            OpenChildForm(new QuanLyLuong());
         }
 
         private void button4_Click(object sender, EventArgs e)

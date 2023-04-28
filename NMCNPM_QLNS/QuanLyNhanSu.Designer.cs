@@ -109,7 +109,7 @@
             this.employeeListView.HideSelection = false;
             this.employeeListView.Location = new System.Drawing.Point(32, 65);
             this.employeeListView.Name = "employeeListView";
-            this.employeeListView.Size = new System.Drawing.Size(1127, 340);
+            this.employeeListView.Size = new System.Drawing.Size(1125, 340);
             this.employeeListView.TabIndex = 5;
             this.employeeListView.UseCompatibleStateImageBehavior = false;
             this.employeeListView.View = System.Windows.Forms.View.Details;
@@ -182,7 +182,7 @@
             // 
             // IDtxt
             // 
-            this.IDtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDtxt.Location = new System.Drawing.Point(209, 486);
             this.IDtxt.Name = "IDtxt";
             this.IDtxt.ReadOnly = true;
@@ -211,7 +211,7 @@
             // 
             // Hotxb
             // 
-            this.Hotxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hotxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hotxb.Location = new System.Drawing.Point(294, 586);
             this.Hotxb.Name = "Hotxb";
             this.Hotxb.Size = new System.Drawing.Size(225, 22);
@@ -229,7 +229,7 @@
             // 
             // Tentxb
             // 
-            this.Tentxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tentxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tentxb.Location = new System.Drawing.Point(221, 636);
             this.Tentxb.Name = "Tentxb";
             this.Tentxb.Size = new System.Drawing.Size(298, 22);
@@ -288,7 +288,7 @@
             // Notecbx
             // 
             this.Notecbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Notecbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notecbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Notecbx.FormattingEnabled = true;
             this.Notecbx.Location = new System.Drawing.Point(729, 584);
             this.Notecbx.Name = "Notecbx";
@@ -319,6 +319,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.radioButton3);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.radioButton1);
@@ -416,7 +417,7 @@
             // 
             // GioiTinhtxb
             // 
-            this.GioiTinhtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GioiTinhtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GioiTinhtxb.ForeColor = System.Drawing.Color.DimGray;
             this.GioiTinhtxb.Location = new System.Drawing.Point(384, 685);
             this.GioiTinhtxb.Name = "GioiTinhtxb";
@@ -426,20 +427,20 @@
             // 
             // dateTimePickerNgaySinh
             // 
-            this.dateTimePickerNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(773, 486);
+            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(811, 486);
             this.dateTimePickerNgaySinh.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
             this.dateTimePickerNgaySinh.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(285, 22);
+            this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(247, 22);
             this.dateTimePickerNgaySinh.TabIndex = 43;
             // 
             // HopDongtxb
             // 
             this.HopDongtxb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.HopDongtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HopDongtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HopDongtxb.FormattingEnabled = true;
             this.HopDongtxb.Location = new System.Drawing.Point(811, 634);
             this.HopDongtxb.Name = "HopDongtxb";
@@ -449,7 +450,7 @@
             // QueQuancbx
             // 
             this.QueQuancbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.QueQuancbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QueQuancbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QueQuancbx.FormattingEnabled = true;
             this.QueQuancbx.Location = new System.Drawing.Point(729, 536);
             this.QueQuancbx.Name = "QueQuancbx";
@@ -459,7 +460,7 @@
             // ChucVucbx
             // 
             this.ChucVucbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ChucVucbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChucVucbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChucVucbx.FormattingEnabled = true;
             this.ChucVucbx.Location = new System.Drawing.Point(178, 536);
             this.ChucVucbx.Name = "ChucVucbx";
@@ -473,7 +474,7 @@
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button6.Image = global::NMCNPM_QLNS.Properties.Resources.downloadfile;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(1069, 411);
+            this.button6.Location = new System.Drawing.Point(1067, 411);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(90, 25);
             this.button6.TabIndex = 39;
@@ -486,7 +487,7 @@
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button5.BackgroundImage = global::NMCNPM_QLNS.Properties.Resources.refreshing;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(633, 435);
+            this.button5.Location = new System.Drawing.Point(632, 434);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(25, 25);
             this.button5.TabIndex = 37;
@@ -500,7 +501,7 @@
             this.ChangeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChangeBtn.ForeColor = System.Drawing.Color.White;
             this.ChangeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ChangeBtn.Location = new System.Drawing.Point(939, 676);
+            this.ChangeBtn.Location = new System.Drawing.Point(938, 675);
             this.ChangeBtn.Name = "ChangeBtn";
             this.ChangeBtn.Size = new System.Drawing.Size(120, 40);
             this.ChangeBtn.TabIndex = 31;
@@ -515,7 +516,7 @@
             this.DeleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.ForeColor = System.Drawing.Color.White;
             this.DeleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteBtn.Location = new System.Drawing.Point(798, 676);
+            this.DeleteBtn.Location = new System.Drawing.Point(797, 675);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(100, 40);
             this.DeleteBtn.TabIndex = 30;
@@ -530,7 +531,7 @@
             this.AddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBtn.ForeColor = System.Drawing.Color.White;
             this.AddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddBtn.Location = new System.Drawing.Point(648, 676);
+            this.AddBtn.Location = new System.Drawing.Point(647, 675);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(100, 40);
             this.AddBtn.TabIndex = 29;

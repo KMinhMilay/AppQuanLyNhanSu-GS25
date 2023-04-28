@@ -111,7 +111,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin nhân viên");
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin nhân viên","WARNING");
             }
         }
         public void loadSpecificEmployeeList(ListView listView,int type,string sreachValue)

@@ -39,9 +39,6 @@ namespace NMCNPM_QLNS
             childForm.Show();
 
         }
-
-
-
         void loadEmployeeListView(ListView listView)
         {
             EmployeeDAO.Instance.loadEmployeeList(listView);
@@ -129,12 +126,12 @@ namespace NMCNPM_QLNS
                 sorter.Order = SortOrder.Ascending;
             }
             employeeListView.Sort();
-        }
+        }//hienthi
         private void button5_Click(object sender, EventArgs e)
         {
             clearInput();
             refreshEmployeeList();
-        }
+        } // refresh
         private void employeeListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(employeeListView.SelectedItems.Count > 0)
@@ -217,7 +214,7 @@ namespace NMCNPM_QLNS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về thông tin của sinh viên này không", "Cảnh báo", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về thông tin của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {

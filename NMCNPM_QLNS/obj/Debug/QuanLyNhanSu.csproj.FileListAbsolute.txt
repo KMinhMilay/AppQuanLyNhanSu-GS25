@@ -114,7 +114,6 @@ C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\QuanLyNhanSu.csproj.Suggeste
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.Login.resources
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.MenuButton.resources
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.QuanLyNhanSu.resources
-C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.Form4.resources
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.Form5.resources
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.Form6.resources
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.AddNhanSu.resources
@@ -124,3 +123,4 @@ C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\QuanLyNhanSu.csproj.Generate
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\QuanLyNhanSu.csproj.CoreCompileInputs.cache
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.exe
 C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.pdb
+C:\Users\plkmi\Source\Repos32\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.QuanLyLuong.resources
