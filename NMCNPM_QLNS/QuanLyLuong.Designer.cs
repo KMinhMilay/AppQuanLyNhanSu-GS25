@@ -200,7 +200,7 @@
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button6.Image = global::NMCNPM_QLNS.Properties.Resources.downloadfile;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(1068, 411);
+            this.button6.Location = new System.Drawing.Point(1096, 411);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(90, 25);
             this.button6.TabIndex = 39;

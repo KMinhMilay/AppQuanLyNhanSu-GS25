@@ -18,7 +18,7 @@ namespace NMCNPM_QLNS.DAO
             private set { instance = value; }
         }
         private SalaryDAO() { }
-
+        
         public void loadSalaryList(ListView listView)
         {
             string query = "USP_LoadSalary";
