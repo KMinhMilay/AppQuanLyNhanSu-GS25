@@ -66,8 +66,10 @@ namespace NMCNPM_QLNS.DAO
         }
         public void changeSalary(string soGioLam,string tangGioLam,string nvID)
         {
-            string query = "update SALARY set soGioLam = CAST( @soGioLam as INT) , tangGioLam = CAST( @tangGioLam as INT) , Luong = soGioLam+tangGioLam*4 where nvID = @nvID";
+            string query = "update SALARY set soGioLam = CAST( @soGioLam as INT) , tangGioLam = CAST( @tangGioLam as INT) where nvID = @nvID";
+            string querry = "update SALARY set Luong = soGioLam + tangGioLam * 4 where nvID = @nvID";
             int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] {soGioLam,tangGioLam,nvID });
+            int sum = DataProvider.Instance.ExecuteNonQuery(querry, new object[] {nvID});
             if (data > 0)
             {
                 MessageBox.Show("Cập nhật lương thành công. Vui lòng ấn refresh để cập nhật danh sách", "Thành công cập nhật lương nhân viên");
