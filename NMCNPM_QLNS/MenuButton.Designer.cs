@@ -69,9 +69,9 @@
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button5.Location = new System.Drawing.Point(705, 0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(140, 50);
+            this.button5.Size = new System.Drawing.Size(163, 50);
             this.button5.TabIndex = 12;
-            this.button5.Text = "Quản lý hàng";
+            this.button5.Text = "Quản lý sản phẩm";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -178,7 +178,7 @@
             this.panel2.Size = new System.Drawing.Size(1200, 750);
             this.panel2.TabIndex = 1;
             // 
-            // Form2
+            // MenuButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form2";
+            this.Name = "MenuButton";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hệ thống quản lý nhân sự GS25";
             this.Load += new System.EventHandler(this.Form2_Load);

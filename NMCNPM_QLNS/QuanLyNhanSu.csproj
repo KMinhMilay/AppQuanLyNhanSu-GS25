@@ -50,6 +50,7 @@
     <Compile Include="DAO\ChucVu_QueQuan_HopDong_Note_DAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\SalaryDAO.cs" />
     <Compile Include="test.cs">
       <SubType>Form</SubType>
@@ -81,11 +82,11 @@
     <Compile Include="QuanLyLuong.Designer.cs">
       <DependentUpon>QuanLyLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyDoanhThu.cs">
+    <Compile Include="Form5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyDoanhThu.Designer.cs">
-      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanPham.cs">
       <SubType>Form</SubType>
@@ -99,11 +100,11 @@
     <Compile Include="AddNhanSu.Designer.cs">
       <DependentUpon>AddNhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSanPham.cs">
+    <Compile Include="Form8.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSanPham.Designer.cs">
-      <DependentUpon>AddSanPham.cs</DependentUpon>
+    <Compile Include="Form8.Designer.cs">
+      <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemCompaper.cs" />
     <Compile Include="Program.cs" />
@@ -123,8 +124,8 @@
     <EmbeddedResource Include="QuanLyLuong.resx">
       <DependentUpon>QuanLyLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyDoanhThu.resx">
-      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham.resx">
       <DependentUpon>QuanLySanPham.cs</DependentUpon>
@@ -132,8 +133,8 @@
     <EmbeddedResource Include="AddNhanSu.resx">
       <DependentUpon>AddNhanSu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddSanPham.resx">
-      <DependentUpon>AddSanPham.cs</DependentUpon>
+    <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

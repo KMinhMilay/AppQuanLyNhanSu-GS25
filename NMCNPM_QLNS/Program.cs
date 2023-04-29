@@ -16,8 +16,8 @@ namespace NMCNPM_QLNS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
-            Application.Run(new test());
+            Application.Run(new Login());
+            //Application.Run(new test());
         }
     }
 }

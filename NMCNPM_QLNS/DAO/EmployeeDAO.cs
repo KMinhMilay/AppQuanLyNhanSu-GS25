@@ -63,6 +63,11 @@ namespace NMCNPM_QLNS.DAO
             if(data>0) {
                 MessageBox.Show("Xóa thông tin nhân viên thành công");
             }
+            else
+            {
+                MessageBox.Show("Xóa thông tin nhân viên thất bại");
+
+            }
         }
         public bool addNewEmployee(string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh,string nvNgaySinh, string nvQueQuan , string TTNV , string HopDong)
         {

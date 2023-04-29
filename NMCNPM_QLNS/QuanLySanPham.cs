@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NMCNPM_QLNS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace NMCNPM_QLNS
         public Form6()
         {
             InitializeComponent();
+            LoadProductList(productListView);
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -32,10 +34,26 @@ namespace NMCNPM_QLNS
             childForm.BringToFront();
             childForm.Show();
         }
+        void LoadProductList(ListView listView)
+        {
+            ProductDAO.Instance.loadProductList(listView);
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AddSanPham());
+            OpenChildForm(new Form8());
+        }
+
+
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            label5.Text=radioButton1.Text.ToString();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            label5.Text=radioButton2.Text.ToString();
         }
     }
 }

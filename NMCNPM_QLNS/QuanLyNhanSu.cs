@@ -185,7 +185,6 @@ namespace NMCNPM_QLNS
                 }
             }
         }
-
         private void button1_Click(object sender, EventArgs e) // tim kiem
         {
             employeeListView.Items.Clear();
