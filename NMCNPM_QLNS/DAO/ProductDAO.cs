@@ -70,7 +70,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                string query = "insert into SANPHAM values ( CAST( @sanphamID as bigint) , @sanphamName , CAST( @gia as bigint) , CAST( @chietkhau as bigint) , @NCC)";
+                string query = "insert into SANPHAM values ( CAST( @sanphamID as bigint) , @sanphamName , CAST( @gia as bigint) , CAST( @chietkhau as bigint) , @NCC )";
                 int data = DataProvider.Instance.ExecuteNonQuery(query,new object[] { sanphamID, sanphamName, gia, chietkhau, NCC });
                 if(data > 0)
                 {
@@ -99,7 +99,7 @@ namespace NMCNPM_QLNS.DAO
         }
         public void deleteProduct(string  sanphamID)
         {
-            string query = "detele from SANPHAM where sanphamID = @sanphamID";
+            string query = "DELETE FROM SANPHAM where sanphamID = @sanphamID";
             int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sanphamID });
             if(data > 0)
             {

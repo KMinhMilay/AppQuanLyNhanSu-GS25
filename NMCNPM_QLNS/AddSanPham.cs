@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NMCNPM_QLNS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,17 @@ namespace NMCNPM_QLNS
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(IDtxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text)|| string.IsNullOrWhiteSpace(CKtxb.Text))
+            {
+                MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
+            }
+            else
+            {
+                if(ProductDAO.Instance.addNewProduct(IDtxb.Text,Nametxb.Text,Moneytxb.Text,CKtxb.Text,NCCtxb.Text)==true)
+                {
+                    clearInput();
+                }
+            }
         }
     }
 }
