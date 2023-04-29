@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NMCNPM_QLNS
 {
-    public partial class Form8 : Form
+    public partial class AddSanPham : Form
     {
-        public Form8()
+        public AddSanPham()
         {
             InitializeComponent();
         }
@@ -20,6 +20,17 @@ namespace NMCNPM_QLNS
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void clearInput()
+        {
+            IDtxb.Clear();
+            Nametxb.Clear();
+            Moneytxb.Clear();
+            CKtxb.Clear();
+            NCCtxb.Clear();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
         }
     }
 }

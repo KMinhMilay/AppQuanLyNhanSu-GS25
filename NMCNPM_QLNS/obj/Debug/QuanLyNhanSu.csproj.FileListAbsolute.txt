@@ -153,7 +153,6 @@ C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\NMCNPM
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.Form5.resources
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.Form6.resources
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.AddNhanSu.resources
-C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.Form8.resources
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.Properties.Resources.resources
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.cache
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\QuanLyNhanSu.csproj.CoreCompileInputs.cache
@@ -162,3 +161,4 @@ C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\NMCNPM
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\bin\Debug\NMCNPM_QLNS.exe.config
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\bin\Debug\NMCNPM_QLNS.exe
 C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\bin\Debug\NMCNPM_QLNS.pdb
+C:\Users\plkmi\Source\Repos\AppQuanLyNhanSu-GS25ewe\NMCNPM_QLNS\obj\Debug\NMCNPM_QLNS.AddSanPham.resources

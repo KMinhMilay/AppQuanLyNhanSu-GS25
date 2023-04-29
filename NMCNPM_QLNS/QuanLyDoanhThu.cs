@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace NMCNPM_QLNS
 {
-    public partial class Form5 : Form
+    public partial class QuanLyDoanhThu : Form
     {
-        public Form5()
+        public QuanLyDoanhThu()
         {
             InitializeComponent();
         }
+
+
     }
 }

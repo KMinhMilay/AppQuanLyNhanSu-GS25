@@ -34,10 +34,21 @@ namespace NMCNPM_QLNS.DAO
                 listView.Items.Add(item);
             }
         }
-        public void loadSpecifiProductList(ListView listView,string value) 
+        public void loadSpecifiProductList(ListView listView,int type,string value) 
         {
-            string query = "select * from SANPHAM where sanphamID like '%' + @sanphamID + '%' ";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query,new object[] {value});
+            string query;
+            DataTable data = new DataTable();
+            if(type==1)
+            {
+                query = "select * from SANPHAM where sanphamID like '%' + @sanphamID + '%'";
+                data = DataProvider.Instance.ExecuteQuery(query, new object[] { value });
+            }
+            else if(type==2)
+            {
+                query = "select * from SANPHAM where NCC like '%' + @NCC + '%'";
+                data = DataProvider.Instance.ExecuteQuery(query, new object[] { value });
+            }
+
             foreach (DataRow row in data.Rows)
             {
                 ListViewItem item = new ListViewItem(row[0].ToString());
@@ -73,10 +84,10 @@ namespace NMCNPM_QLNS.DAO
                 }
             }
         }
-        public void changeProductInfo( string sanphamName, string gia, string chietkhau, string NCC , string sanphamID)
+        public void changeProductInfo( string gia, string chietkhau, string sanphamID)
         {
-            string query = "update SANPHAM set sanphamName=@sanphamName , gia=CAST( @gia as bigint) , chietkhau=CAST( @chietkhau as bigint) , NCC=@NCC where sanphamID = CAST( @sanphamID as bigint)";
-            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sanphamName, gia, chietkhau, NCC, sanphamID });
+            string query = "update SANPHAM set gia=CAST( @gia as bigint) , chietkhau=CAST( @chietkhau as bigint) where sanphamID = CAST( @sanphamID as bigint)";
+            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { gia, chietkhau, sanphamID });
             if(data > 0)
             {
                 MessageBox.Show("Cập nhật thông tin sản phẩm thành công. Vui lòng ấn refresh để cập nhật Danh sách", "Thành công thêm nhân viên");
