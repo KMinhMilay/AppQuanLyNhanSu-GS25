@@ -137,31 +137,6 @@ namespace NMCNPM_QLNS
 
         }
 
-        private void ConThieutxb_TextChanged(object sender, EventArgs e)
-        {
-            //if (Totaltxb.Text != "" && DaNhantxb.Text != "0")
-            //{
-            //    ConThieutxb.Text = (Int64.Parse(Totaltxb.Text) - Int64.Parse(DaNhantxb.Text)).ToString();
-            //}
-            //else { ConThieutxb.Clear(); }
 
-        }
-
-        private void TTDTcbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (Int64.Parse(ConThieutxb.Text) > 0)
-            //{
-            //    TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Chưa hoàn thành");
-            //}
-            //else
-            //{
-            //    TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Hoàn thành");
-            //}
-        }
-
-        private void Totaltxb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

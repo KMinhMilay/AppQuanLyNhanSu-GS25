@@ -179,7 +179,6 @@
             this.TTDTcbx.Name = "TTDTcbx";
             this.TTDTcbx.Size = new System.Drawing.Size(254, 24);
             this.TTDTcbx.TabIndex = 24;
-            this.TTDTcbx.SelectedIndexChanged += new System.EventHandler(this.TTDTcbx_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -200,7 +199,6 @@
             this.ConThieutxb.Size = new System.Drawing.Size(254, 22);
             this.ConThieutxb.TabIndex = 22;
             this.ConThieutxb.Text = "0";
-            this.ConThieutxb.TextChanged += new System.EventHandler(this.ConThieutxb_TextChanged);
             // 
             // label8
             // 
@@ -241,7 +239,6 @@
             this.Totaltxb.Size = new System.Drawing.Size(254, 22);
             this.Totaltxb.TabIndex = 18;
             this.Totaltxb.Text = "0";
-            this.Totaltxb.TextChanged += new System.EventHandler(this.Totaltxb_TextChanged);
             // 
             // label10
             // 
