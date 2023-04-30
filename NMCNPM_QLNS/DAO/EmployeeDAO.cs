@@ -112,7 +112,7 @@ namespace NMCNPM_QLNS.DAO
             int data = DataProvider.Instance.ExecuteNonQuery(query , new object[] { ChucVu, nvHo, nvTen, nvGioiTinh,nvNgaySinh , nvQueQuan, TTNV, HopDong , nvID});
             if(data>0)
             {
-                MessageBox.Show("Cập nhật thông tin nhân viên thành công. Vui lòng ấn refresh để cập nhật Danh sách","Thành công thêm nhân viên");
+                MessageBox.Show("Cập nhật thông tin nhân viên thành công. Vui lòng ấn refresh để cập nhật Danh sách","Thành công thay đổi thông tin nhân viên");
             }
             else
             {

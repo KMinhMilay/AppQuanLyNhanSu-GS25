@@ -52,6 +52,8 @@
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\SalaryDAO.cs" />
+    <Compile Include="DAO\SalesDAO.cs" />
+    <Compile Include="DAO\TrangThaiDoanhThuDAO.cs" />
     <Compile Include="test.cs">
       <SubType>Form</SubType>
     </Compile>

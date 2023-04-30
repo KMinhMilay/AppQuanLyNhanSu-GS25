@@ -218,9 +218,7 @@ namespace NMCNPM_QLNS
             if (result == DialogResult.Yes)
             {
                 EmployeeDAO.Instance.changeEmployeeInfo(ChucVucbx.Text,Hotxb.Text,Tentxb.Text,GioiTinhtxb.Text,dateTimePickerNgaySinh.Value.ToString("MM-dd-yyyy"),QueQuancbx.Text,Notecbx.Text,HopDongtxb.Text,IDtxt.Text);
-
                 refreshEmployeeList();
-
                 clearInput();
             }
         }
