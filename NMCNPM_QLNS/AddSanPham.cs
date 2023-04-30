@@ -38,7 +38,7 @@ namespace NMCNPM_QLNS
             }
             else
             {
-                if(ProductDAO.Instance.addNewProduct(IDtxb.Text,Nametxb.Text,Moneytxb.Text,CKtxb.Text,NCCtxb.Text)==true)
+                if(ProductDAO.Instance.addNewProduct(IDtxb.Text.Trim(),Nametxb.Text.Trim(),Moneytxb.Text.Trim(),CKtxb.Text.Trim(),NCCtxb.Text.Trim())==true)
                 {
                     clearInput();
                 }

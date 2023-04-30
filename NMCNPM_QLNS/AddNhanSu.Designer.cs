@@ -127,7 +127,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(672, 263);
+            this.label10.Location = new System.Drawing.Point(675, 262);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 16);
             this.label10.TabIndex = 43;
@@ -222,6 +222,7 @@
             this.IDtbx.Name = "IDtbx";
             this.IDtbx.Size = new System.Drawing.Size(310, 22);
             this.IDtbx.TabIndex = 33;
+            this.IDtbx.TextChanged += new System.EventHandler(this.IDtbx_TextChanged);
             // 
             // label2
             // 
@@ -253,6 +254,7 @@
             this.ChucVucbx.Name = "ChucVucbx";
             this.ChucVucbx.Size = new System.Drawing.Size(341, 24);
             this.ChucVucbx.TabIndex = 54;
+            this.ChucVucbx.SelectedIndexChanged += new System.EventHandler(this.ChucVucbx_SelectedIndexChanged);
             // 
             // QueQuancbx
             // 
@@ -325,6 +327,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNhanSu";
             this.Text = "Form7";
+            this.Load += new System.EventHandler(this.AddNhanSu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

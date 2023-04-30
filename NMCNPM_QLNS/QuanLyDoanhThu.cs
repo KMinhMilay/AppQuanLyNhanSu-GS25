@@ -95,7 +95,7 @@ namespace NMCNPM_QLNS
 
             if (result == DialogResult.Yes)
             {
-                SalesDAO.Instance.changeSaleInfo(DaNhantxb.Text, ConThieutxb.Text, TTDTcbx.Text, Datetxb.Text);
+                SalesDAO.Instance.changeSaleInfo(DaNhantxb.Text.Trim(), ConThieutxb.Text.Trim(), TTDTcbx.Text, Datetxb.Text);
                 refreshSaleList();
                 clearInput();
             }

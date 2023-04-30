@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace NMCNPM_QLNS
 {
@@ -17,6 +18,37 @@ namespace NMCNPM_QLNS
         {
             InitializeComponent();
             addCBX_ChucVu_QueQuan_HopDong_Note();
+
+
+        }
+        string cpy;
+        string idYear = DateTime.Now.Year.ToString();
+        string idMonth = DateTime.Now.Month.ToString();
+        string idDay = DateTime.Now.Day.ToString();
+        public string applyID() //lay id: yymmdd
+        {
+            cpy = idYear.Substring(2);
+            if (idMonth.Length < 2)
+            {
+                idMonth = "0" + idMonth;
+            }
+            if (idDay.Length < 2)
+            {
+                idDay = "0" + idDay;
+            }
+             return cpy + idMonth + idDay;
+        }
+        public bool existNhanVien()
+        {
+            if(EmployeeDAO.Instance.existEmployee(IDtbx.Text))
+            {
+                return true;
+            }
+            return false;
+        }
+        public string selectLastestID()
+        {
+            return EmployeeDAO.Instance.selectLastEmployssList();
         }
         private void addCBX_ChucVu_QueQuan_HopDong_Note()
         {
@@ -47,7 +79,7 @@ namespace NMCNPM_QLNS
         }
         private void clearInput()
         {
-            IDtbx.Clear();
+            IDtbx.Text = applyID();
             ChucVucbx.SelectedIndex = -1;
             Namrdb.Checked = false;
             Nurdb.Checked = false;
@@ -59,8 +91,6 @@ namespace NMCNPM_QLNS
             Notetxb.SelectedIndex = -1;
             HopDongtxb.SelectedIndex = -1;
         }
-
-        
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -69,28 +99,53 @@ namespace NMCNPM_QLNS
         //string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh, string nvQueQuan, string nvNgaySinh, string TTNV, string HopDong
         private void button3_Click(object sender, EventArgs e) // nut them
         {
-            if(string.IsNullOrWhiteSpace(IDtbx.Text)||string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
+            if(string.IsNullOrWhiteSpace(IDtbx.Text)||IDtbx.Text==applyID() || string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
             }
             else
             {
                 string date = dateTimePicker1.Value.ToString("MM-dd-yyyy");
-                if(EmployeeDAO.Instance.addNewEmployee(IDtbx.Text, ChucVucbx.Text, Hotxb.Text, Tentxb.Text,GioiTinhtxb.Text, date,  QueQuancbx.Text,Notetxb.Text,HopDongtxb.Text)==true) 
+                if(EmployeeDAO.Instance.addNewEmployee(IDtbx.Text.Trim(), ChucVucbx.Text, Hotxb.Text.Trim(), Tentxb.Text.Trim(),GioiTinhtxb.Text, date,  QueQuancbx.Text,Notetxb.Text,HopDongtxb.Text)==true) 
                 {
                     clearInput();
                 }
             }
-        }
 
+
+        }
         private void Namrdb_CheckedChanged(object sender, EventArgs e)
         {
             GioiTinhtxb.Text = "Nam";
         }
-
         private void Nurdb_CheckedChanged(object sender, EventArgs e)
         {
             GioiTinhtxb.Text = "Nữ";
+        }
+
+
+        private void IDtbx_TextChanged(object sender, EventArgs e)
+        {
+            if (existNhanVien())
+            {
+                IDtbx.Text.Trim();
+                IDtbx.ForeColor = Color.Red;
+            }
+            else
+            {
+                IDtbx.Text.Trim();
+                IDtbx.ForeColor = Color.Green;
+            }
+        }
+
+        private void ChucVucbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNhanSu_Load(object sender, EventArgs e)
+        {
+            IDtbx.Text = applyID();
         }
     }
 }

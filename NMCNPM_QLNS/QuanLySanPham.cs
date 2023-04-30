@@ -125,7 +125,7 @@ namespace NMCNPM_QLNS
 
             if (result == DialogResult.Yes)
             {
-                ProductDAO.Instance.changeProductInfo(Moneytxb.Text, CKtxb.Text,IDtxb.Text);
+                ProductDAO.Instance.changeProductInfo(Moneytxb.Text.Trim(), CKtxb.Text.Trim(),IDtxb.Text.Trim());
 
                 refreshProductList();
 

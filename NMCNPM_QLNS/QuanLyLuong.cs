@@ -119,7 +119,7 @@ namespace NMCNPM_QLNS
 
             if (result == DialogResult.Yes)
             {
-                SalaryDAO.Instance.changeSalary(Luongtxb.Text,TangCatxb.Text,IDtxb.Text);
+                SalaryDAO.Instance.changeSalary(Luongtxb.Text.Trim(),TangCatxb.Text.Trim(),IDtxb.Text.Trim());
 
                 refreshSalaryList();
 

@@ -171,6 +171,12 @@ namespace NMCNPM_QLNS.DAO
             }
 
         }
+        public string selectLastEmployssList()
+        {
+            string query = "select TOP(1) nvID from NHANVIEN order by nvID DESC";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data.Rows[0][0].ToString();
+        }
     }
 
 }
