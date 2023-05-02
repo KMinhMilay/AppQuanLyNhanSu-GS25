@@ -81,9 +81,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(892, 534);
+            this.button1.Location = new System.Drawing.Point(892, 539);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 60);
+            this.button1.Size = new System.Drawing.Size(188, 46);
             this.button1.TabIndex = 2;
             this.button1.Text = "Đăng nhập";
             this.button1.UseVisualStyleBackColor = false;
@@ -98,7 +98,7 @@
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Location = new System.Drawing.Point(570, 460);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(510, 58);
+            this.panel5.Size = new System.Drawing.Size(510, 50);
             this.panel5.TabIndex = 6;
             // 
             // button2
@@ -152,7 +152,7 @@
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Location = new System.Drawing.Point(570, 370);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(510, 58);
+            this.panel3.Size = new System.Drawing.Size(510, 50);
             this.panel3.TabIndex = 5;
             // 
             // panel4
