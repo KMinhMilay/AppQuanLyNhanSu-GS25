@@ -56,6 +56,12 @@ namespace NMCNPM_QLNS.DAO
             }
 
         }
+        public DataTable exportEmployeeList()
+        {
+            string query = "SELECT * FROM dbo.NHANVIEN order by nvTen";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
         public void deleteEmployee(string employeeID)
         {
             string query = "DELETE FROM NHANVIEN WHERE nvID = @nvID";
