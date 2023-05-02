@@ -136,7 +136,7 @@ namespace NMCNPM_QLNS
 
         private void IDtbx_TextChanged(object sender, EventArgs e)
         {
-            if (existNhanVien()||IDtbx.TextLength>9)
+            if (existNhanVien()||IDtbx.TextLength>9||)
             {
                 IDtbx.Text.Trim();
                 IDtbx.ForeColor = Color.Red;
