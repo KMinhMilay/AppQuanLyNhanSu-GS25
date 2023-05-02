@@ -101,15 +101,25 @@ namespace NMCNPM_QLNS
         {
             if(string.IsNullOrWhiteSpace(IDtbx.Text)||IDtbx.Text==applyID() || string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
             {
+
                 MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
             }
             else
             {
-                string date = dateTimePicker1.Value.ToString("MM-dd-yyyy");
-                if(EmployeeDAO.Instance.addNewEmployee(IDtbx.Text.Trim(), ChucVucbx.Text, Hotxb.Text.Trim(), Tentxb.Text.Trim(),GioiTinhtxb.Text, date,  QueQuancbx.Text,Notetxb.Text,HopDongtxb.Text)==true) 
+                if (DateTime.Now.Year - dateTimePicker1.Value.Year >= 18)
                 {
-                    clearInput();
+                    string date = dateTimePicker1.Value.ToString("MM-dd-yyyy");
+                    if (EmployeeDAO.Instance.addNewEmployee(IDtbx.Text.Trim(), ChucVucbx.Text, Hotxb.Text.Trim(), Tentxb.Text.Trim(), GioiTinhtxb.Text, date, QueQuancbx.Text, Notetxb.Text, HopDongtxb.Text) == true)
+                    {
+                        clearInput();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Nhân viên này bạn nhập tuổi dưới 18. Mời nhập lại", "Cảnh báo");
+                    dateTimePicker1.Value = DateTime.Now;
+                }
+
             }
 
 
@@ -126,7 +136,7 @@ namespace NMCNPM_QLNS
 
         private void IDtbx_TextChanged(object sender, EventArgs e)
         {
-            if (existNhanVien())
+            if (existNhanVien()||IDtbx.TextLength>9)
             {
                 IDtbx.Text.Trim();
                 IDtbx.ForeColor = Color.Red;

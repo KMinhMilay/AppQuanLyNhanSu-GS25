@@ -28,6 +28,14 @@ namespace NMCNPM_QLNS
             button5.FlatStyle = FlatStyle.Flat;
             button5.FlatAppearance.BorderSize = 0;
             OpenChildForm(new QuanLyNhanSu());
+            button2.BackColor = Color.FromArgb(0, 124, 255);
+            button2.ForeColor = Color.White;
+            button3.BackColor = Color.FromArgb(230, 240, 255);
+            button3.ForeColor = Color.FromArgb(0, 124, 255);
+            button4.BackColor = Color.FromArgb(230, 240, 255);
+            button4.ForeColor = Color.FromArgb(0, 124, 255);
+            button5.BackColor = Color.FromArgb(230, 240, 255);
+            button5.ForeColor = Color.FromArgb(0, 124, 255);
 
         }
         private Form currentFormChild;

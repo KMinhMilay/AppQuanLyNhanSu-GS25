@@ -21,184 +21,155 @@ namespace NMCNPM_QLNS
             refreshProductList();
         }
         private Form currentFormChild;
-        //public void ExportFile(DataTable dataTable, string sheetName, string title)
-        //{
-        //    //Tạo các đối tượng Excel
+        public void ExportFile(DataTable dataTable, string sheetName, string title)
+        {
+            //Tạo các đối tượng Excel
 
-        //    Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
 
-        //    Microsoft.Office.Interop.Excel.Workbooks oBooks;
+            Microsoft.Office.Interop.Excel.Workbooks oBooks;
 
-        //    Microsoft.Office.Interop.Excel.Sheets oSheets;
+            Microsoft.Office.Interop.Excel.Sheets oSheets;
 
-        //    Microsoft.Office.Interop.Excel.Workbook oBook;
+            Microsoft.Office.Interop.Excel.Workbook oBook;
 
-        //    Microsoft.Office.Interop.Excel.Worksheet oSheet;
+            Microsoft.Office.Interop.Excel.Worksheet oSheet;
 
-        //    //Tạo mới một Excel WorkBook 
+            //Tạo mới một Excel WorkBook 
 
-        //    oExcel.Visible = true;
+            oExcel.Visible = true;
 
-        //    oExcel.DisplayAlerts = false;
+            oExcel.DisplayAlerts = false;
 
-        //    oExcel.Application.SheetsInNewWorkbook = 1;
+            oExcel.Application.SheetsInNewWorkbook = 1;
 
-        //    oBooks = oExcel.Workbooks;
+            oBooks = oExcel.Workbooks;
 
-        //    oBook = (Microsoft.Office.Interop.Excel.Workbook)(oExcel.Workbooks.Add(Type.Missing));
+            oBook = (Microsoft.Office.Interop.Excel.Workbook)(oExcel.Workbooks.Add(Type.Missing));
 
-        //    oSheets = oBook.Worksheets;
+            oSheets = oBook.Worksheets;
 
-        //    oSheet = (Microsoft.Office.Interop.Excel.Worksheet)oSheets.get_Item(1);
+            oSheet = (Microsoft.Office.Interop.Excel.Worksheet)oSheets.get_Item(1);
 
-        //    oSheet.Name = sheetName;
+            oSheet.Name = sheetName;
 
-        //    // Tạo phần Tiêu đề
-        //    Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "G1");
+            // Tạo phần Tiêu đề
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "E1");
+            head.Interior.ColorIndex = 33;
+            head.MergeCells = true;
 
-        //    head.MergeCells = true;
+            head.Value2 = title;
 
-        //    head.Value2 = title;
+            head.Font.Bold = true;
 
-        //    head.Font.Bold = true;
+            head.Font.Name = "Times New Roman";
 
-        //    head.Font.Name = "Times New Roman";
+            head.Font.Size = "20";
 
-        //    head.Font.Size = "20";
+            head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
-        //    head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            // Tạo tiêu đề cột 
 
-        //    // Tạo tiêu đề cột 
+            Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
 
-        //    Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
+            cl1.Value2 = "Mã sản phẩm";
 
-        //    cl1.Value2 = "ID nhân viên";
+            cl1.ColumnWidth = 20.0;
 
-        //    cl1.ColumnWidth = 15;
+            Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
 
-        //    Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
+            cl2.Value2 = "Tên sản phẩm";
 
-        //    cl2.Value2 = "Chức vụ";
+            cl2.ColumnWidth = 40.0;
 
-        //    cl2.ColumnWidth = 13.0;
+            Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
 
-        //    Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
+            cl3.Value2 = "Giá tiền";
+            cl3.ColumnWidth = 15.0;
 
-        //    cl3.Value2 = "Ngày sinh";
-        //    cl3.ColumnWidth = 18.0;
+            Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
 
-        //    Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
+            cl4.Value2 = "Chiết khẩu";
 
-        //    cl4.Value2 = "Họ và tên đệm";
+            cl4.ColumnWidth = 15.0;
 
-        //    cl4.ColumnWidth = 20.5;
+            Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
 
-        //    Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
+            cl5.Value2 = "Nhà cung cấp";
 
-        //    cl5.Value2 = "Tên";
+            cl5.ColumnWidth = 30.0;
 
-        //    cl5.ColumnWidth = 10.5;
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "E3");
 
-        //    Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
+            rowHead.Font.Bold = true;
 
-        //    cl6.Value2 = "Giới tính";
+            // Kẻ viền
 
-        //    cl6.ColumnWidth = 10.5;
+            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
 
-        //    Microsoft.Office.Interop.Excel.Range cl7 = oSheet.get_Range("G3", "G3");
+            // Thiết lập màu nền
 
-        //    cl7.Value2 = "Ngày sinh";
+            rowHead.Interior.ColorIndex = 33;
 
-        //    cl7.ColumnWidth = 18.5;
+            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
-        //    Microsoft.Office.Interop.Excel.Range cl8 = oSheet.get_Range("H3", "H3");
+            // Tạo mảng theo datatable
 
-        //    cl8.Value2 = "Quê quán";
+            object[,] arr = new object[dataTable.Rows.Count, dataTable.Columns.Count];
 
-        //    cl8.ColumnWidth = 15.5;
+            //Chuyển dữ liệu từ DataTable vào mảng đối tượng
 
-        //    Microsoft.Office.Interop.Excel.Range cl9 = oSheet.get_Range("J3", "J3");
+            for (int row = 0; row < dataTable.Rows.Count; row++)
+            {
+                DataRow dataRow = dataTable.Rows[row];
 
-        //    cl9.Value2 = "Tình trạng";
+                for (int col = 0; col < dataTable.Columns.Count; col++)
+                {
+                    arr[row, col] = dataRow[col];
+                }
+            }
 
-        //    cl9.ColumnWidth = 18.5;
+            //Thiết lập vùng điền dữ liệu
 
-        //    Microsoft.Office.Interop.Excel.Range cl10 = oSheet.get_Range("K3", "K3");
+            int rowStart = 4;
 
-        //    cl10.Value2 = "Hợp đồng";
+            int columnStart = 1;
 
-        //    cl10.ColumnWidth = 18.5;
+            int rowEnd = rowStart + dataTable.Rows.Count - 2;
 
-        //    Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "G3");
+            int columnEnd = dataTable.Columns.Count;
 
-        //    rowHead.Font.Bold = true;
+            // Ô bắt đầu điền dữ liệu
 
-        //    // Kẻ viền
+            Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowStart, columnStart];
 
-        //    rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+            // Ô kết thúc điền dữ liệu
 
-        //    // Thiết lập màu nền
+            Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnEnd];
 
-        //    rowHead.Interior.ColorIndex = 6;
+            // Lấy về vùng điền dữ liệu
 
-        //    rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            Microsoft.Office.Interop.Excel.Range range = oSheet.get_Range(c1, c2);
 
-        //    // Tạo mảng theo datatable
+            //Điền dữ liệu vào vùng đã thiết lập
 
-        //    object[,] arr = new object[dataTable.Rows.Count, dataTable.Columns.Count];
+            range.Value2 = arr;
 
-        //    //Chuyển dữ liệu từ DataTable vào mảng đối tượng
+            // Kẻ viền
 
-        //    for (int row = 0; row < dataTable.Rows.Count; row++)
-        //    {
-        //        DataRow dataRow = dataTable.Rows[row];
+            range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
 
-        //        for (int col = 0; col < dataTable.Columns.Count; col++)
-        //        {
-        //            arr[row, col] = dataRow[col];
-        //        }
-        //    }
+            // Căn giữa cột mã nhân viên
 
-        //    //Thiết lập vùng điền dữ liệu
+            //Microsoft.Office.Interop.Excel.Range c3 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnStart];
 
-        //    int rowStart = 4;
+            //Microsoft.Office.Interop.Excel.Range c4 = oSheet.get_Range(c1, c3);
 
-        //    int columnStart = 1;
-
-        //    int rowEnd = rowStart + dataTable.Rows.Count - 2;
-
-        //    int columnEnd = dataTable.Columns.Count;
-
-        //    // Ô bắt đầu điền dữ liệu
-
-        //    Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowStart, columnStart];
-
-        //    // Ô kết thúc điền dữ liệu
-
-        //    Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnEnd];
-
-        //    // Lấy về vùng điền dữ liệu
-
-        //    Microsoft.Office.Interop.Excel.Range range = oSheet.get_Range(c1, c2);
-
-        //    //Điền dữ liệu vào vùng đã thiết lập
-
-        //    range.Value2 = arr;
-
-        //    // Kẻ viền
-
-        //    range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
-
-        //    // Căn giữa cột mã nhân viên
-
-        //    //Microsoft.Office.Interop.Excel.Range c3 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnStart];
-
-        //    //Microsoft.Office.Interop.Excel.Range c4 = oSheet.get_Range(c1, c3);
-
-        //    //Căn giữa cả bảng 
-        //    oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-        //}
-
+            //Căn giữa cả bảng 
+            oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            oSheet.get_Range(c1, c2).VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            oSheet.get_Range(c1, c2).WrapText = false;
+        }
         private void OpenChildForm(Form childForm)
         {
             if (currentFormChild != null)
@@ -232,13 +203,12 @@ namespace NMCNPM_QLNS
             CKtxb.Clear();
             NCCtxb.Clear();
         }
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             OpenChildForm(new AddSanPham());
         }
-
-
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             label5.Text=radioButton1.Text.ToString();
@@ -329,6 +299,14 @@ namespace NMCNPM_QLNS
 
                 }
             }
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = ProductDAO.Instance.exportProductList();
+            DateTime curr = DateTime.Now;
+            string sheetNamme = "SẢN PHẨM";
+            string title = "Danh sách sản phẩm ngày " + curr.ToString("dd-MM-yyyy");
+            ExportFile(dataTable, sheetNamme, title);
         }
     }
 }

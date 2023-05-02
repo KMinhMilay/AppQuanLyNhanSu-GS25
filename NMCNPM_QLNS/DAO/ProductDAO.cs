@@ -34,6 +34,12 @@ namespace NMCNPM_QLNS.DAO
                 listView.Items.Add(item);
             }
         }
+        public DataTable exportProductList()
+        {
+            string query = "USP_LoadProduct";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
         public void loadSpecifiProductList(ListView listView,int type,string value) 
         {
             string query;

@@ -47,6 +47,34 @@ namespace NMCNPM_QLNS.DAO
                 saleListView.Items.Add(item);
             }
         }
+        public DataTable exportSaleList()
+        {
+            string query = "SELECT * FROM DOANHTHU";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            //DataTable dt = new DataTable();
+            //foreach (DataRow row in data.Rows)
+            //{
+            //    string tmp = row[0].ToString();
+            //    if (tmp.Length == 20)
+            //    {
+            //        tmp = tmp.Substring(0, 8);
+            //    }
+            //    else if (tmp.Length == 21)
+            //    {
+            //        tmp = tmp.Substring(0, 9);
+            //    }
+            //    else if (tmp.Length == 22)
+            //    {
+            //        tmp = tmp.Substring(0, 10);
+            //    }
+            //    dt.Rows.Add(tmp);
+            //    for (int i = 1; i < data.Columns.Count; i++)
+            //    {
+            //        dt.Rows.Add(row[i].ToString());
+            //    }
+            //}
+            return data;
+        }
         public void loadSpecificSaleList(ListView saleListView,string sreachValue)
         {
             string query = "select * from DOANHTHU where ngaythangSold = CAST( @ngaythangSold as DATE) ";

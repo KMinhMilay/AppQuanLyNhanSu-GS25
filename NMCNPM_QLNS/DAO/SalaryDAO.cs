@@ -33,6 +33,12 @@ namespace NMCNPM_QLNS.DAO
                 listView.Items.Add(item);
             }
         }
+        public DataTable exportSalaryList()
+        {
+            string query = "USP_LoadSalary";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
         public void loadSpecificSalaryList(ListView listView, int type, string sreachValue)
         {
             string query;

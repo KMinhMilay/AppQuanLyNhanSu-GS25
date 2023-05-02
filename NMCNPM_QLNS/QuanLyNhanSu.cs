@@ -55,7 +55,7 @@ namespace NMCNPM_QLNS
             Hotxb.Clear();
             Tentxb.Clear();
             textBox5.Clear();
-
+            dateTimePickerNgaySinh.Value = DateTime.Now;
             rdNam.Checked = false;
             rdNu.Checked = false;   
             Notecbx.SelectedIndex = -1;
@@ -220,10 +220,30 @@ namespace NMCNPM_QLNS
 
                 for (int col = 0; col < dataTable.Columns.Count; col++)
                 {
-                    arr[row, col] = dataRow[col];
+                    if (col == 5)
+                    {
+                        string sub= dataRow[col].ToString();
+                        if (sub.Length == 20)
+                        {
+                            sub = sub.Substring(0, 8);
+                        }
+                        else if (sub.Length == 21)
+                        {
+                            sub = sub.Substring(0, 9);
+                        }
+                        else if (sub.Length == 22)
+                        {
+                            sub = sub.Substring(0, 10);
+                        }
+                        arr[row, col] = sub;
+                    }
+                    else
+                    {
+                        arr[row, col] = dataRow[col];
+                    }
+
                 }
             }
-
             //Thiết lập vùng điền dữ liệu
 
             int rowStart = 4;
@@ -384,14 +404,23 @@ namespace NMCNPM_QLNS
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về thông tin của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if (DateTime.Today.Year-dateTimePickerNgaySinh.Value.Year >= 18)
             {
-                EmployeeDAO.Instance.changeEmployeeInfo(ChucVucbx.Text,Hotxb.Text.Trim(),Tentxb.Text.Trim(),GioiTinhtxb.Text.Trim(),dateTimePickerNgaySinh.Value.ToString("MM-dd-yyyy"),QueQuancbx.Text,Notecbx.Text,HopDongtxb.Text, IDtxt.Text);
-                refreshEmployeeList();
-                clearInput();
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về thông tin của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    EmployeeDAO.Instance.changeEmployeeInfo(ChucVucbx.Text, Hotxb.Text.Trim(), Tentxb.Text.Trim(), GioiTinhtxb.Text.Trim(), dateTimePickerNgaySinh.Value.ToString("MM-dd-yyyy"), QueQuancbx.Text, Notecbx.Text, HopDongtxb.Text, IDtxt.Text);
+                    refreshEmployeeList();
+                    clearInput();
+                }
             }
+            else
+            {
+                MessageBox.Show("Nhân viên này bạn nhập tuổi dưới 18. Mời nhập lại", "Cảnh báo");
+                dateTimePickerNgaySinh.Value = DateTime.Now;
+            }
+            
         }
         private void button6_Click(object sender, EventArgs e)
         {
