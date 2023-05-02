@@ -37,7 +37,6 @@ namespace NMCNPM_QLNS
                 textBox2.ForeColor = Color.FromArgb(0, 124, 255);
             }
         }
-
         private void textBox2_Leave(object sender, EventArgs e)
         {
             if (textBox2.Text == "")
@@ -46,7 +45,6 @@ namespace NMCNPM_QLNS
                 textBox2.ForeColor = Color.FromArgb(0, 212, 234);
             }
         }
-
         private void textBox3_Enter(object sender, EventArgs e)
         {
             if (textBox3.Text == "Mật khẩu")
@@ -57,7 +55,6 @@ namespace NMCNPM_QLNS
                 textBox3.ForeColor = Color.FromArgb(0, 124, 255);
             }
         }
-
         private void textBox3_Leave(object sender, EventArgs e)
         {
             if (textBox3.Text == "")

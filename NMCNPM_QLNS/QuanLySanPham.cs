@@ -121,7 +121,7 @@ namespace NMCNPM_QLNS
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về giá và chiết khấu sản phẩm của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về giá và chiết khấu sản phẩm của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo , MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {

@@ -502,7 +502,7 @@
             this.ChangeBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChangeBtn.ForeColor = System.Drawing.Color.White;
             this.ChangeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ChangeBtn.Location = new System.Drawing.Point(938, 675);
+            this.ChangeBtn.Location = new System.Drawing.Point(939, 679);
             this.ChangeBtn.Name = "ChangeBtn";
             this.ChangeBtn.Size = new System.Drawing.Size(120, 40);
             this.ChangeBtn.TabIndex = 31;
@@ -517,7 +517,7 @@
             this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.ForeColor = System.Drawing.Color.White;
             this.DeleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteBtn.Location = new System.Drawing.Point(797, 675);
+            this.DeleteBtn.Location = new System.Drawing.Point(798, 679);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(100, 40);
             this.DeleteBtn.TabIndex = 30;
@@ -532,7 +532,7 @@
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBtn.ForeColor = System.Drawing.Color.White;
             this.AddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddBtn.Location = new System.Drawing.Point(647, 675);
+            this.AddBtn.Location = new System.Drawing.Point(648, 679);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(100, 40);
             this.AddBtn.TabIndex = 29;

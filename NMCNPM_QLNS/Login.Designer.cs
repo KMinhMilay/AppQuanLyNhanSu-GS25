@@ -79,11 +79,11 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(570, 560);
+            this.button1.Location = new System.Drawing.Point(892, 534);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(510, 60);
+            this.button1.Size = new System.Drawing.Size(188, 60);
             this.button1.TabIndex = 2;
             this.button1.Text = "Đăng nhập";
             this.button1.UseVisualStyleBackColor = false;
@@ -124,11 +124,11 @@
             // textBox3
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(212)))), ((int)(((byte)(234)))));
-            this.textBox3.Location = new System.Drawing.Point(50, 12);
+            this.textBox3.Location = new System.Drawing.Point(50, 10);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(450, 28);
+            this.textBox3.Size = new System.Drawing.Size(450, 32);
             this.textBox3.TabIndex = 3;
             this.textBox3.Text = "vanphonggs25";
             this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
@@ -166,11 +166,11 @@
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(212)))), ((int)(((byte)(234)))));
             this.textBox2.Location = new System.Drawing.Point(50, 12);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(450, 28);
+            this.textBox2.Size = new System.Drawing.Size(450, 32);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "201209018";
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);

@@ -174,7 +174,7 @@ namespace NMCNPM_QLNS
             }
             else
             {
-                DialogResult deleteUserWarning = MessageBox.Show("Bạn có muốn xóa người dùng này không?", "Cảnh báo", MessageBoxButtons.YesNo);
+                DialogResult deleteUserWarning = MessageBox.Show("Bạn có muốn xóa người dùng này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(deleteUserWarning == DialogResult.Yes )
                 {
                     if (!string.IsNullOrWhiteSpace(IDtxt.Text))
