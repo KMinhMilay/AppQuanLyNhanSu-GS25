@@ -19,7 +19,7 @@ namespace NMCNPM_QLNS.DAO
         private AccountDAO() { }
         public bool LoginAccountNVVP(string userName, string passWord)
         {
-            string query = "USP_Login @userName , @passWord , @type";
+            string query = "USP_Login_AppQuanLy @userName , @passWord , @typeID";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord, 0 });
             return result.Rows.Count == 1;
         }
