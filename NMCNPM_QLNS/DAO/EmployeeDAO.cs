@@ -86,7 +86,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                string query = "insert into NHANVIEN values ( CAST( @nvID as BIGINT) , @ChucVu , @nvHo , @nvTen , @nvGioiTinh , CAST( @nvNgaySinh as DATE) , @nvQueQuan , @TTNV , @HopDong )";
+                string query = "insert into NHANVIEN values ( @nvID , @ChucVu , @nvHo , @nvTen , @nvGioiTinh , CAST( @nvNgaySinh as DATE) , @nvQueQuan , @TTNV , @HopDong )";
                 int data = DataProvider.Instance.ExecuteNonQuery (query , new object[] { nvID, ChucVu, nvHo, nvTen, nvGioiTinh, nvNgaySinh, nvQueQuan, TTNV, HopDong });
                 if(data>0)
                 {
