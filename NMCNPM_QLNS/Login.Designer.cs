@@ -173,7 +173,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(301, 26);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Tên đăng nhập";
+            this.textBox2.Text = "Tên tài khoản";
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
