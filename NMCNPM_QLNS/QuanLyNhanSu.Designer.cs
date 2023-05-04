@@ -319,6 +319,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.radioButton3);
             this.panel1.Controls.Add(this.label13);
@@ -384,7 +385,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(850, 437);
+            this.radioButton1.Location = new System.Drawing.Point(855, 436);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(83, 24);
             this.radioButton1.TabIndex = 47;
