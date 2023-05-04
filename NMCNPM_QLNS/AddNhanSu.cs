@@ -159,7 +159,7 @@ namespace NMCNPM_QLNS
         {
             IDtbx.Text = applyID();
             label11.Text = "";
-            label11.Text = "Bạn vừa thêm 1 nhân viên với mã: " + selectLastestID();
+            label11.Text = "Bạn vừa thêm 1 nhân viên mới gần đây nhất với mã: " + selectLastestID();
         }
 
         private void label11_Click(object sender, EventArgs e)
