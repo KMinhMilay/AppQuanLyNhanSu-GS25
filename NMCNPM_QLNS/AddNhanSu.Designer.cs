@@ -308,6 +308,7 @@
             this.label11.Size = new System.Drawing.Size(243, 20);
             this.label11.TabIndex = 59;
             this.label11.Text = "Bạn vừa thêm 1 nhân viên với mã: ";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // AddNhanSu
             // 

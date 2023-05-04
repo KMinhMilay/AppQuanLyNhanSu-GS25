@@ -112,6 +112,8 @@ namespace NMCNPM_QLNS
                     if (EmployeeDAO.Instance.addNewEmployee(IDtbx.Text.Trim(), ChucVucbx.Text, Hotxb.Text.Trim(), Tentxb.Text.Trim(), GioiTinhtxb.Text, date, QueQuancbx.Text, Notetxb.Text, HopDongtxb.Text) == true)
                     {
                         clearInput();
+                        label11.Text = "";
+                        label11.Text = "Bạn vừa thêm 1 nhân viên với mã: " + selectLastestID() + " vào " + DateTime.Now.ToString();
                     }
                 }
                 else
@@ -156,6 +158,13 @@ namespace NMCNPM_QLNS
         private void AddNhanSu_Load(object sender, EventArgs e)
         {
             IDtbx.Text = applyID();
+            label11.Text = "";
+            label11.Text = "Bạn vừa thêm 1 nhân viên với mã: " + selectLastestID();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
