@@ -51,6 +51,7 @@
             this.HopDongtxb = new System.Windows.Forms.ComboBox();
             this.GioiTinhtxb = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button4
@@ -297,12 +298,24 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(266, 27);
             this.dateTimePicker1.TabIndex = 58;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
+            this.label11.Location = new System.Drawing.Point(116, 218);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(243, 20);
+            this.label11.TabIndex = 59;
+            this.label11.Text = "Bạn vừa thêm 1 nhân viên với mã: ";
+            // 
             // AddNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.GioiTinhtxb);
             this.Controls.Add(this.HopDongtxb);
@@ -360,5 +373,6 @@
         private System.Windows.Forms.ComboBox HopDongtxb;
         private System.Windows.Forms.TextBox GioiTinhtxb;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label11;
     }
 }

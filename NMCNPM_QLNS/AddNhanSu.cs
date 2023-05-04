@@ -99,7 +99,7 @@ namespace NMCNPM_QLNS
         //string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh, string nvQueQuan, string nvNgaySinh, string TTNV, string HopDong
         private void button3_Click(object sender, EventArgs e) // nut them
         {
-            if(string.IsNullOrWhiteSpace(IDtbx.Text)||IDtbx.Text==applyID() || string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
+            if(string.IsNullOrWhiteSpace(IDtbx.Text)||IDtbx.Text==applyID()|| IDtbx.ForeColor == Color.Red || string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
             {
 
                 MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
@@ -136,7 +136,7 @@ namespace NMCNPM_QLNS
 
         private void IDtbx_TextChanged(object sender, EventArgs e)
         {
-            if (existNhanVien()||IDtbx.TextLength>9)
+            if (existNhanVien()||IDtbx.TextLength>9||IDtbx.TextLength<7)
             {
                 IDtbx.Text.Trim();
                 IDtbx.ForeColor = Color.Red;
