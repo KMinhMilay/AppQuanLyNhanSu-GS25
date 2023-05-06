@@ -149,7 +149,7 @@
             this.displayNamelabel.Name = "displayNamelabel";
             this.displayNamelabel.Size = new System.Drawing.Size(141, 35);
             this.displayNamelabel.TabIndex = 5;
-            this.displayNamelabel.Text = "Tên quản lý dweewewewew\\";
+            this.displayNamelabel.Text = "Tên quản lý ";
             // 
             // pictureBox2
             // 
