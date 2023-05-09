@@ -243,12 +243,12 @@ namespace NMCNPM_QLNS
         }
         public void refreshSaleList()
         {
-            updateNewest();
             salesListView.Items.Clear();
             SalesDAO.Instance.loadSaleList(salesListView);
         }
         private void button5_Click(object sender, EventArgs e)
         {
+            updateNewest();
             refreshSaleList();
             clearInput();
         }
@@ -298,13 +298,77 @@ namespace NMCNPM_QLNS
         }
         private void salesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Datetxb.Text = salesListView.FocusedItem.SubItems[0].Text.ToString();
-            TienMattxb.Text = salesListView.FocusedItem.SubItems[1].Text.ToString();
-            TienDienTutxb.Text = salesListView.FocusedItem.SubItems[2].Text.ToString();
-            TienBanktxb.Text = salesListView.FocusedItem.SubItems[3].Text.ToString();
-            Totaltxb.Text = salesListView.FocusedItem.SubItems[4].Text.ToString();
-            DaNhantxb.Text = salesListView.FocusedItem.SubItems[5].Text.ToString();
-            ConThieutxb.Text= salesListView.FocusedItem.SubItems[6].Text.ToString();
+            if (salesListView.FocusedItem.SubItems[0].Text.ToString() == null)
+            {
+                Datetxb.Text = "0";
+            }
+            else
+            {
+                Datetxb.Text = salesListView.FocusedItem.SubItems[0].Text.ToString();
+            }
+            
+
+            if (salesListView.FocusedItem.SubItems[1].Text.ToString() == null)
+            {
+                TienMattxb.Text = "0";
+            }
+            else
+            {
+                TienMattxb.Text = salesListView.FocusedItem.SubItems[1].Text.ToString();
+            }
+
+
+
+            if (salesListView.FocusedItem.SubItems[2].Text.ToString() == null)
+            {
+                TienDienTutxb.Text = "0";
+            }
+            else
+            {
+                TienDienTutxb.Text = salesListView.FocusedItem.SubItems[2].Text.ToString();
+            }
+
+
+            if (salesListView.FocusedItem.SubItems[3].Text.ToString() == null)
+            {
+                TienBanktxb.Text = "0";
+            }
+            else
+            {
+                TienBanktxb.Text = salesListView.FocusedItem.SubItems[3].Text.ToString();
+            }
+
+
+            if (salesListView.FocusedItem.SubItems[4].Text.ToString() == null)
+            {
+                Totaltxb.Text = "0";
+            }
+            else
+            {
+                Totaltxb.Text = salesListView.FocusedItem.SubItems[4].Text.ToString();
+            }
+
+
+
+            if (salesListView.FocusedItem.SubItems[5].Text.ToString() == null)
+            {
+                DaNhantxb.Text = "0";
+            }
+            else
+            {
+                DaNhantxb.Text = salesListView.FocusedItem.SubItems[5].Text.ToString();
+            }
+
+
+            if (salesListView.FocusedItem.SubItems[6].Text.ToString() == null)
+            {
+                ConThieutxb.Text = "0";
+            }
+            else
+            {
+                ConThieutxb.Text = salesListView.FocusedItem.SubItems[6].Text.ToString();
+            }
+
             TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact(salesListView.FocusedItem.SubItems[7].Text);
             
         }
@@ -321,7 +385,7 @@ namespace NMCNPM_QLNS
             else
             {
                 ConThieutxb.Text = (Int64.Parse(Totaltxb.Text) - Int64.Parse(DaNhantxb.Text)).ToString();
-                if (Int64.Parse(ConThieutxb.Text) > 0)
+                if (Int64.Parse(ConThieutxb.Text) != 0)
                 {
                     TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Chưa hoàn thành");
                 }
@@ -339,6 +403,15 @@ namespace NMCNPM_QLNS
             string sheetNamme = "SẢN PHẨM";
             string title = "Danh sách sản phẩm ngày " + curr.ToString("dd-MM-yyyy");
             ExportFile(dataTable, sheetNamme, title);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            updateNewest();
+            SalesDAO.Instance.updateAllSale();
+            MessageBox.Show("Bạn đã cập nhật toàn bộ doanh thu", "Thành công");
+            refreshSaleList();
+            clearInput();
         }
     }
 }
