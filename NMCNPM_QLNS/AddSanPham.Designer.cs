@@ -152,6 +152,7 @@
             this.IDtxb.Name = "IDtxb";
             this.IDtxb.Size = new System.Drawing.Size(297, 27);
             this.IDtxb.TabIndex = 33;
+            this.IDtxb.TextChanged += new System.EventHandler(this.IDtxb_TextChanged);
             // 
             // label2
             // 

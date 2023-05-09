@@ -116,5 +116,16 @@ namespace NMCNPM_QLNS.DAO
                 MessageBox.Show("Xóa thông tin sản phẩm thất bại");
             }
         }
+        
+        public bool existProduct(string idProduct)
+        {
+            string query = "select * from SANPHAM where sanphamID = @sanphamID";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idProduct });
+            if (data.Rows.Count > 0)
+            {
+                return true;
+            }
+            else { return false; }
+        }
     }
 }

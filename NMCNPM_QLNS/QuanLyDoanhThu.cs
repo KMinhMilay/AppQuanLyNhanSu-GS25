@@ -20,6 +20,10 @@ namespace NMCNPM_QLNS
             addTTDTcbx();
             refreshSaleList();
         }
+        public void updateNewest()
+        {
+            SalesDAO.Instance.updateNewestSale(DateTime.Now.ToString("MM-dd-yyyy"));
+        }
         public void ExportFile(DataTable dataTable, string sheetName, string title)
         {
             //Tạo các đối tượng Excel
@@ -239,6 +243,7 @@ namespace NMCNPM_QLNS
         }
         public void refreshSaleList()
         {
+            updateNewest();
             salesListView.Items.Clear();
             SalesDAO.Instance.loadSaleList(salesListView);
         }

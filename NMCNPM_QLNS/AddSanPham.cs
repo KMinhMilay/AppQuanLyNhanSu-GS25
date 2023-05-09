@@ -30,19 +30,43 @@ namespace NMCNPM_QLNS
             CKtxb.Clear();
             NCCtxb.Clear();
         }
+        public bool existSanPham()
+        {
+            if (ProductDAO.Instance.existProduct(IDtxb.Text))
+            {
+                return true;
+            }
+            return false;
+        }
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(IDtxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text)|| string.IsNullOrWhiteSpace(CKtxb.Text))
+            if (string.IsNullOrWhiteSpace(IDtxb.Text)|| IDtxb.ForeColor==Color.Red || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text)|| string.IsNullOrWhiteSpace(CKtxb.Text))
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
             }
             else
             {
+                
                 if(ProductDAO.Instance.addNewProduct(IDtxb.Text.Trim(),Nametxb.Text.Trim(),Moneytxb.Text.Trim(),CKtxb.Text.Trim(),NCCtxb.Text.Trim())==true)
                 {
                     clearInput();
                 }
             }
+        }
+
+        private void IDtxb_TextChanged(object sender, EventArgs e)
+        {
+            if (existSanPham()|| int.TryParse(IDtxb.Text, out _) == false)
+            {
+                IDtxb.Text.Trim();
+                IDtxb.ForeColor = Color.Red;
+            }
+            else
+            {
+                IDtxb.Text.Trim();
+                IDtxb.ForeColor = Color.Green;
+            }
+
         }
     }
 }

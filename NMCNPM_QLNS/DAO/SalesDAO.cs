@@ -51,29 +51,26 @@ namespace NMCNPM_QLNS.DAO
         {
             string query = "SELECT * FROM DOANHTHU";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            //DataTable dt = new DataTable();
-            //foreach (DataRow row in data.Rows)
-            //{
-            //    string tmp = row[0].ToString();
-            //    if (tmp.Length == 20)
-            //    {
-            //        tmp = tmp.Substring(0, 8);
-            //    }
-            //    else if (tmp.Length == 21)
-            //    {
-            //        tmp = tmp.Substring(0, 9);
-            //    }
-            //    else if (tmp.Length == 22)
-            //    {
-            //        tmp = tmp.Substring(0, 10);
-            //    }
-            //    dt.Rows.Add(tmp);
-            //    for (int i = 1; i < data.Columns.Count; i++)
-            //    {
-            //        dt.Rows.Add(row[i].ToString());
-            //    }
-            //}
             return data;
+        }
+        public void updateNewestSale(string dateNow)
+        {
+            string query = "USP_Update_Newest_Sale @ngaythangSold";
+            int data = DataProvider.Instance.ExecuteNonQuery(query ,new object[] {dateNow});
+            if (data>0)
+            {
+                MessageBox.Show("Cập nhật thông tin doanh thu " + dateNow + " mới nhất", "Thành công");
+            }
+            else
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin doanh thu. Vui lòng thử lại", "WARNING");
+                string querySub = "INSERT INTO DOANHTHU VALUES ( CAST( @ngaythangnam AS DATE) , 0 , 0 , 0 , 0 , 0 , 0 , N'Chưa hoàn thành' ) ";
+                int dataSub = DataProvider.Instance.ExecuteNonQuery(querySub ,new object[] {dateNow});
+                if (dataSub > 0)
+                {
+                    MessageBox.Show("Chúng tôi đã thêm vào " + dateNow + " mới nhất", "Xin hãy thử lại");
+                }
+            }
         }
         public void loadSpecificSaleList(ListView saleListView,string sreachValue)
         {
@@ -118,5 +115,6 @@ namespace NMCNPM_QLNS.DAO
                 MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin doanh thu", "WARNING");
             }
         }
+        
     }
 }
