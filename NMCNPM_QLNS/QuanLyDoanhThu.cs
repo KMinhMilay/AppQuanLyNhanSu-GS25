@@ -413,5 +413,15 @@ namespace NMCNPM_QLNS
             refreshSaleList();
             clearInput();
         }
+
+        private void ConThieutxb_TextChanged(object sender, EventArgs e)
+        {
+            //&& Int64.Parse(ConThieutxb.Text) > Int64.Parse(ConThieutxb.Text)
+            if (Int64.Parse(ConThieutxb.Text) < 0)
+            {
+                MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
+                DaNhantxb.Text = "0";
+            }
+        }
     }
 }

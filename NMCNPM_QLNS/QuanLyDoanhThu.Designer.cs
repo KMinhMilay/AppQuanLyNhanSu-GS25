@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.dateTimePickerSreach = new System.Windows.Forms.DateTimePicker();
             this.button6 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +96,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 750);
             this.panel1.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(19)))));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button2.Location = new System.Drawing.Point(1016, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(172, 39);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Cập nhật toàn bộ DT";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dateTimePickerSreach
             // 
@@ -203,6 +217,7 @@
             this.ConThieutxb.Size = new System.Drawing.Size(220, 27);
             this.ConThieutxb.TabIndex = 22;
             this.ConThieutxb.Text = "0";
+            this.ConThieutxb.TextChanged += new System.EventHandler(this.ConThieutxb_TextChanged);
             // 
             // label8
             // 
@@ -417,20 +432,6 @@
             this.label1.Size = new System.Drawing.Size(215, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ DOANH THU";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(19)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button2.Location = new System.Drawing.Point(1016, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 39);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Cập nhật toàn bộ DT";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // QuanLyDoanhThu
             // 
