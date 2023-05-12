@@ -389,6 +389,8 @@ namespace NMCNPM_QLNS
             if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text)||Int64.TryParse(DaNhantxb.Text,out _)==false)
             {
                 MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
+                DaNhantxb.Text = "0";
+
             }
             else
             {
