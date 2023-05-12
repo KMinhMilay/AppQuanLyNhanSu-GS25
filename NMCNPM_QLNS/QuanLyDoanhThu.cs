@@ -378,7 +378,7 @@ namespace NMCNPM_QLNS
             {
                 DaNhantxb.Text = "0";
             }
-            if (Int64.Parse(DaNhantxb.Text) < 0 && Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text))
+            if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text))
             {
                 MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
             }
@@ -417,7 +417,7 @@ namespace NMCNPM_QLNS
         private void ConThieutxb_TextChanged(object sender, EventArgs e)
         {
             //&& Int64.Parse(ConThieutxb.Text) > Int64.Parse(ConThieutxb.Text)
-            if (Int64.Parse(ConThieutxb.Text) < 0)
+            if (Int64.Parse(ConThieutxb.Text) < 0 || Int64.Parse(DaNhantxb.Text) < 0 )
             {
                 MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
                 DaNhantxb.Text = "0";
