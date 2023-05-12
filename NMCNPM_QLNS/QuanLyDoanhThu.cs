@@ -410,8 +410,8 @@ namespace NMCNPM_QLNS
         {
             DataTable dataTable = SalesDAO.Instance.exportSaleList();
             DateTime curr = DateTime.Now;
-            string sheetNamme = "SẢN PHẨM";
-            string title = "Danh sách sản phẩm ngày " + curr.ToString("dd-MM-yyyy");
+            string sheetNamme = "DOANH THU";
+            string title = "Danh sách Doanh thu ngày " + curr.ToString("dd-MM-yyyy");
             ExportFile(dataTable, sheetNamme, title);
         }
 
