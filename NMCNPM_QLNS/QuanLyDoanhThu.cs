@@ -378,7 +378,15 @@ namespace NMCNPM_QLNS
             {
                 DaNhantxb.Text = "0";
             }
-            if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text))
+            if (DaNhantxb.Text == "-")
+            {
+                DaNhantxb.Text = "0";
+            }
+            if(Int64.TryParse(DaNhantxb.Text, out _) == false)
+            {
+                DaNhantxb.Text = "0";
+            }
+            if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text)||Int64.TryParse(DaNhantxb.Text,out _)==false)
             {
                 MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
             }
