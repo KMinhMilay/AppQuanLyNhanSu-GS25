@@ -149,28 +149,7 @@ namespace NMCNPM_QLNS
 
                 for (int col = 0; col < dataTable.Columns.Count; col++)
                 {
-                    if (col == 0)
-                    {
-                        string sub = dataRow[col].ToString();
-                        if (sub.Length == 20)
-                        {
-                            sub = sub.Substring(0, 8);
-                        }
-                        else if (sub.Length == 21)
-                        {
-                            sub = sub.Substring(0, 9);
-                        }
-                        else if (sub.Length == 22)
-                        {
-                            sub = sub.Substring(0, 10);
-                        }
-                        arr[row, col] = sub;
-                    }
-                    else
-                    {
-                        arr[row, col] = dataRow[col];
-                    }
-
+                    arr[row, col] = dataRow[col];
                 }
             }
 
@@ -180,7 +159,7 @@ namespace NMCNPM_QLNS
 
             int columnStart = 1;
 
-            int rowEnd = rowStart + dataTable.Rows.Count - 2;
+            int rowEnd = rowStart + dataTable.Rows.Count - 1;
 
             int columnEnd = dataTable.Columns.Count;
 
