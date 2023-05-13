@@ -276,6 +276,7 @@
             this.Moneytxb.Name = "Moneytxb";
             this.Moneytxb.Size = new System.Drawing.Size(297, 27);
             this.Moneytxb.TabIndex = 11;
+            this.Moneytxb.TextChanged += new System.EventHandler(this.Moneytxb_TextChanged);
             // 
             // label4
             // 

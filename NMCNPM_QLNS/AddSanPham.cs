@@ -40,7 +40,12 @@ namespace NMCNPM_QLNS
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(IDtxb.Text)|| IDtxb.ForeColor==Color.Red || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text)|| string.IsNullOrWhiteSpace(CKtxb.Text))
+            if(Int64.TryParse(IDtxb.Text,out _)==false || Int64.TryParse(Moneytxb.Text, out _) == false || Int64.TryParse(CKtxb.Text, out _) == false || IDtxb.ForeColor == Color.Red)
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng. Có thể bạn đã nhập sai ở đâu đó");
+
+            }
+            if (string.IsNullOrWhiteSpace(IDtxb.Text)|| string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text)|| string.IsNullOrWhiteSpace(CKtxb.Text))
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
             }

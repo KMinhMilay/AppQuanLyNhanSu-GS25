@@ -272,12 +272,20 @@ namespace NMCNPM_QLNS
             DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về giá và chiết khấu sản phẩm của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo , MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
+            
             {
-                ProductDAO.Instance.changeProductInfo(Moneytxb.Text.Trim(), CKtxb.Text.Trim(),IDtxb.Text.Trim());
+                if(Int64.TryParse(Moneytxb.Text,out _)==false||Int64.TryParse(CKtxb.Text,out _)==false)
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng giá tiền hay chiết khấu");
+                }
+                else
+                {
+                    ProductDAO.Instance.changeProductInfo(Moneytxb.Text.Trim(), CKtxb.Text.Trim(), IDtxb.Text.Trim());
 
-                refreshProductList();
+                    refreshProductList();
 
-                clearInput();
+                    clearInput();
+                }
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -307,6 +315,11 @@ namespace NMCNPM_QLNS
             string sheetNamme = "SẢN PHẨM";
             string title = "Danh sách sản phẩm ngày " + curr.ToString("dd-MM-yyyy");
             ExportFile(dataTable, sheetNamme, title);
+        }
+
+        private void Moneytxb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
