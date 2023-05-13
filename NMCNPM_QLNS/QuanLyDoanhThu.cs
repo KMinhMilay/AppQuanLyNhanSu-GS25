@@ -149,7 +149,28 @@ namespace NMCNPM_QLNS
 
                 for (int col = 0; col < dataTable.Columns.Count; col++)
                 {
-                    arr[row, col] = dataRow[col];
+                    if (col == 0)
+                    {
+                        string sub = dataRow[col].ToString();
+                        if (sub.Length == 20)
+                        {
+                            sub = sub.Substring(0, 8);
+                        }
+                        else if (sub.Length == 21)
+                        {
+                            sub = sub.Substring(0, 9);
+                        }
+                        else if (sub.Length == 22)
+                        {
+                            sub = sub.Substring(0, 10);
+                        }
+                        arr[row, col] = sub;
+                    }
+                    else
+                    {
+                        arr[row, col] = dataRow[col];
+                    }
+
                 }
             }
 
@@ -209,8 +230,6 @@ namespace NMCNPM_QLNS
         }
         public void clearInput()
         {
-            dateTimePickerSreach.Value = DateTime.Now;
-            dateTimePickerAfter.Value = DateTime.Now;
             Datetxb.Clear();
             TienMattxb.Clear();
             TienDienTutxb.Clear();
@@ -226,6 +245,9 @@ namespace NMCNPM_QLNS
             salesListView.Items.Clear();
             SalesDAO.Instance.loadSaleList(salesListView);
             dateTimePickerSreach.Value = DateTime.Now.AddDays(-1);
+            dateTimePickerForm.Value = DateTime.Now.AddDays(-1);
+            dateTimePickerTo.Value = DateTime.Now;
+            dateTimePickerAfter.Value = DateTime.Now;
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -262,7 +284,7 @@ namespace NMCNPM_QLNS
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            salesListView.Items.Clear ();
+            salesListView.Items.Clear();
             string sreachPrev = dateTimePickerSreach.Value.ToString("yyyy-MM-dd");
             string sreachAfter = dateTimePickerAfter.Value.ToString("yyyy-MM-dd");
             SalesDAO.Instance.loadSpecificSaleList(salesListView,sreachPrev,sreachAfter);
@@ -422,23 +444,12 @@ namespace NMCNPM_QLNS
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            foreach (ColumnHeader ch in salesListView.Columns)
-            {
-                dt.Columns.Add(ch.Text);
-            }
-            foreach (ListViewItem item in salesListView.Items)
-            {
-                DataRow row = dt.NewRow();
-                for(int i = 0; i < item.SubItems.Count; i++)
-                {
-                    row[i] = item.SubItems[i].Text;
-                }
-                dt.Rows.Add(row);
-            }
+
+            DataTable dt = SalesDAO.Instance.exportMonthSaleList(dateTimePickerForm.Value.ToString("MM-dd-yyyy"), dateTimePickerTo.Value.ToString("MM-dd-yyyy"));
             string sheetNamme = "DOANH THU";
-            string title = "Danh sách Doanh thu từ ngày " + dateTimePickerSreach.Value.ToString("dd-MM-yyyy") + " đến " + dateTimePickerAfter.Value.ToString("dd-MM-yyyy");
+            string title = "Danh sách Doanh thu từ ngày " + dateTimePickerForm.Value.ToString("dd-MM-yyyy") + " đến " + dateTimePickerTo.Value.ToString("dd-MM-yyyy");
             ExportFile(dt, sheetNamme, title);
+            refreshSaleList();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -458,6 +469,11 @@ namespace NMCNPM_QLNS
                 MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
                 DaNhantxb.Text = "0";
             }
+        }
+
+        private void dateTimePickerForm_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

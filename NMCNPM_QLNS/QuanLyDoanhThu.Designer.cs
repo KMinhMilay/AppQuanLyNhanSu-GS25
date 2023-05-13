@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePickerAfter = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.dateTimePickerSreach = new System.Windows.Forms.DateTimePicker();
             this.button6 = new System.Windows.Forms.Button();
@@ -62,14 +65,19 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePickerAfter = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dateTimePickerForm = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.dateTimePickerForm);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.dateTimePickerTo);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dateTimePickerAfter);
@@ -102,6 +110,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 750);
             this.panel1.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(379, 471);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 20);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Từ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(530, 471);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 20);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "đến";
+            // 
+            // dateTimePickerAfter
+            // 
+            this.dateTimePickerAfter.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerAfter.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerAfter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAfter.Location = new System.Drawing.Point(571, 466);
+            this.dateTimePickerAfter.Name = "dateTimePickerAfter";
+            this.dateTimePickerAfter.Size = new System.Drawing.Size(106, 27);
+            this.dateTimePickerAfter.TabIndex = 43;
             // 
             // button2
             // 
@@ -439,35 +477,46 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ DOANH THU";
             // 
-            // dateTimePickerAfter
+            // dateTimePickerTo
             // 
-            this.dateTimePickerAfter.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerAfter.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerAfter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerAfter.Location = new System.Drawing.Point(571, 466);
-            this.dateTimePickerAfter.Name = "dateTimePickerAfter";
-            this.dateTimePickerAfter.Size = new System.Drawing.Size(106, 27);
-            this.dateTimePickerAfter.TabIndex = 43;
+            this.dateTimePickerTo.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerTo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerTo.Location = new System.Drawing.Point(979, 412);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(106, 27);
+            this.dateTimePickerTo.TabIndex = 46;
             // 
-            // label6
+            // label13
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(530, 471);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 20);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "đến";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(938, 415);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 20);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "đến";
             // 
-            // label12
+            // dateTimePickerForm
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(379, 471);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 20);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Từ";
+            this.dateTimePickerForm.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerForm.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerForm.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerForm.Location = new System.Drawing.Point(821, 411);
+            this.dateTimePickerForm.Name = "dateTimePickerForm";
+            this.dateTimePickerForm.Size = new System.Drawing.Size(111, 27);
+            this.dateTimePickerForm.TabIndex = 48;
+            this.dateTimePickerForm.ValueChanged += new System.EventHandler(this.dateTimePickerForm_ValueChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(787, 415);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 20);
+            this.label14.TabIndex = 49;
+            this.label14.Text = "Từ";
             // 
             // QuanLyDoanhThu
             // 
@@ -524,5 +573,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerAfter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dateTimePickerForm;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTo;
+        private System.Windows.Forms.Label label14;
     }
 }
