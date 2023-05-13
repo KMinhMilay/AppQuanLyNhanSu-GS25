@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,10 +108,10 @@ namespace NMCNPM_QLNS.DAO
             }
 
         }
-        public void loadSpecificSaleList(ListView saleListView,string sreachValue)
+        public void loadSpecificSaleList(ListView saleListView,string sreachPre,string sreachAfter)
         {
-            string query = "select * from DOANHTHU where ngaythangSold = CAST( @ngaythangSold as DATE) ";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { sreachValue });
+            string query = "SELECT * FROM DOANHTHU WHERE ngaythangSold between CAST( @monthPrev as date) AND CAST( @monthAfter as date)";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { sreachPre , sreachAfter });
             foreach (DataRow row in data.Rows)
             {
                 string tmp = row[0].ToString();
@@ -150,7 +151,12 @@ namespace NMCNPM_QLNS.DAO
                 MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin doanh thu", "WARNING");
             }
         }
-        
+        public DataTable exportMonthSaleList(string monthPrev,string monthAfter)
+        {
+            string query = "\tSELECT * FROM DOANHTHU WHERE ngaythangSold between CAST( @monthPrev as date) AND CAST( @monthAfter as date)\r\n";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] {monthPrev,monthAfter});
+            return data;
+        }
         
     }
 }

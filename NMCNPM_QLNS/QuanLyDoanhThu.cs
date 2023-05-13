@@ -231,6 +231,7 @@ namespace NMCNPM_QLNS
         public void clearInput()
         {
             dateTimePickerSreach.Value = DateTime.Now;
+            dateTimePickerAfter.Value = DateTime.Now;
             Datetxb.Clear();
             TienMattxb.Clear();
             TienDienTutxb.Clear();
@@ -245,6 +246,7 @@ namespace NMCNPM_QLNS
         {
             salesListView.Items.Clear();
             SalesDAO.Instance.loadSaleList(salesListView);
+            dateTimePickerSreach.Value = DateTime.Now.AddDays(-1);
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -282,22 +284,55 @@ namespace NMCNPM_QLNS
         private void button1_Click(object sender, EventArgs e)
         {
             salesListView.Items.Clear ();
-            string sreach = dateTimePickerSreach.Value.ToString("MM-dd-yyyy");
-            SalesDAO.Instance.loadSpecificSaleList(salesListView,sreach);
+            string sreachPrev = dateTimePickerSreach.Value.ToString("yyyy-MM-dd");
+            string sreachAfter = dateTimePickerAfter.Value.ToString("yyyy-MM-dd");
+            SalesDAO.Instance.loadSpecificSaleList(salesListView,sreachPrev,sreachAfter);
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về doanh thu này không", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (DaNhantxb.Text == "")
             {
-                SalesDAO.Instance.changeSaleInfo(DaNhantxb.Text.Trim(), ConThieutxb.Text.Trim(), TTDTcbx.Text, Datetxb.Text);
-                refreshSaleList();
-                clearInput();
+                DaNhantxb.Text = "0";
             }
+            if (DaNhantxb.Text == "-")
+            {
+                DaNhantxb.Text = "0";
+            }
+            if (Int64.TryParse(DaNhantxb.Text, out _) == false)
+            {
+                DaNhantxb.Text = "0";
+            }
+            if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text) > Int32.Parse(Totaltxb.Text) || Int64.TryParse(DaNhantxb.Text, out _) == false)
+            {
+                MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
+                DaNhantxb.Text = "0";
+
+            }
+            else
+            {
+                ConThieutxb.Text = (Int64.Parse(Totaltxb.Text) - Int64.Parse(DaNhantxb.Text)).ToString();
+                if (Int64.Parse(ConThieutxb.Text) != 0)
+                {
+                    TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Chưa hoàn thành");
+                }
+                else
+                {
+                    TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Hoàn thành");
+                }
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về doanh thu này không", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    SalesDAO.Instance.changeSaleInfo(DaNhantxb.Text.Trim(), ConThieutxb.Text.Trim(), TTDTcbx.Text, Datetxb.Text);
+                    refreshSaleList();
+                    clearInput();
+                }
+            }
+
         }
         private void salesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            clearInput();
             if (salesListView.FocusedItem.SubItems[0].Text.ToString() == null)
             {
                 Datetxb.Text = "0";
@@ -374,45 +409,57 @@ namespace NMCNPM_QLNS
         }
         private void DaNhantxb_TextChanged(object sender, EventArgs e)
         {
-            if (DaNhantxb.Text == "")
-            {
-                DaNhantxb.Text = "0";
-            }
-            if (DaNhantxb.Text == "-")
-            {
-                DaNhantxb.Text = "0";
-            }
-            if(Int64.TryParse(DaNhantxb.Text, out _) == false)
-            {
-                DaNhantxb.Text = "0";
-            }
-            if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text)||Int64.TryParse(DaNhantxb.Text,out _)==false)
-            {
-                MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
-                DaNhantxb.Text = "0";
+            //if (DaNhantxb.Text == "")
+            //{
+            //    DaNhantxb.Text = "0";
+            //}
+            //if (DaNhantxb.Text == "-")
+            //{
+            //    DaNhantxb.Text = "0";
+            //}
+            //if(Int64.TryParse(DaNhantxb.Text, out _) == false)
+            //{
+            //    DaNhantxb.Text = "0";
+            //}
+            //if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text)||Int64.TryParse(DaNhantxb.Text,out _)==false)
+            //{
+            //    MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
+            //    DaNhantxb.Text = "0";
 
-            }
-            else
-            {
-                ConThieutxb.Text = (Int64.Parse(Totaltxb.Text) - Int64.Parse(DaNhantxb.Text)).ToString();
-                if (Int64.Parse(ConThieutxb.Text) != 0)
-                {
-                    TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Chưa hoàn thành");
-                }
-                else
-                {
-                    TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Hoàn thành");
-                }
-            }
+            //}
+            //else
+            //{
+            //    ConThieutxb.Text = (Int64.Parse(Totaltxb.Text) - Int64.Parse(DaNhantxb.Text)).ToString();
+            //    if (Int64.Parse(ConThieutxb.Text) != 0)
+            //    {
+            //        TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Chưa hoàn thành");
+            //    }
+            //    else
+            //    {
+            //        TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Hoàn thành");
+            //    }
+            //}
 
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = SalesDAO.Instance.exportSaleList();
-            DateTime curr = DateTime.Now;
+            DataTable dt = new DataTable();
+            foreach (ColumnHeader ch in salesListView.Columns)
+            {
+                dt.Columns.Add(ch.Text);
+            }
+            foreach (ListViewItem item in salesListView.Items)
+            {
+                DataRow row = dt.NewRow();
+                for(int i = 0; i < item.SubItems.Count; i++)
+                {
+                    row[i] = item.SubItems[i].Text;
+                }
+                dt.Rows.Add(row);
+            }
             string sheetNamme = "DOANH THU";
-            string title = "Danh sách Doanh thu ngày " + curr.ToString("dd-MM-yyyy");
-            ExportFile(dataTable, sheetNamme, title);
+            string title = "Danh sách Doanh thu từ ngày " + dateTimePickerSreach.Value.ToString("dd-MM-yyyy") + " đến " + dateTimePickerAfter.Value.ToString("dd-MM-yyyy");
+            ExportFile(dt, sheetNamme, title);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -426,7 +473,7 @@ namespace NMCNPM_QLNS
 
         private void ConThieutxb_TextChanged(object sender, EventArgs e)
         {
-            //&& Int64.Parse(ConThieutxb.Text) > Int64.Parse(ConThieutxb.Text)
+            
             if (Int64.Parse(ConThieutxb.Text) < 0 || Int64.Parse(DaNhantxb.Text) < 0 )
             {
                 MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
