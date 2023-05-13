@@ -85,5 +85,20 @@ namespace NMCNPM_QLNS.DAO
                 MessageBox.Show("Đã xảy ra lỗi khi cập nhật lương","WARNING");
             }
         }
+        public void resetSalary()
+        {
+            string query = "update SALARY set soGioLam = 0 , tangGioLam = 0";
+            string querry = "update SALARY set Luong = 0";
+            int data = DataProvider.Instance.ExecuteNonQuery(query);
+            int sum = DataProvider.Instance.ExecuteNonQuery(querry);
+            if (data > 0)
+            {
+                MessageBox.Show("Đã thực hiện reset tháng lương này", "Thành công cập nhật lương nhân viên");
+            }
+            else
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật lương", "WARNING");
+            }
+        }
     }
 }

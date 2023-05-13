@@ -308,11 +308,19 @@ namespace NMCNPM_QLNS
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = SalaryDAO.Instance.exportSalaryList();
-            DateTime curr = DateTime.Now;
-            string sheetNamme = "LƯƠNG THÁNG" + curr.ToString("MM");
-            string title = "Danh sách lương nhân viên tháng " + curr.ToString("MM");
-            ExportFile(dataTable, sheetNamme, title);
+            DialogResult result = MessageBox.Show("Khi xuất file thì sẽ cập nhật lại bảng lương nhân viên về 0", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                DataTable dataTable = SalaryDAO.Instance.exportSalaryList();
+                DateTime curr = DateTime.Now;
+                string sheetNamme = "LƯƠNG THÁNG" + curr.ToString("MM");
+                string title = "Danh sách lương nhân viên tháng " + curr.ToString("MM");
+                ExportFile(dataTable, sheetNamme, title);
+                SalaryDAO.Instance.resetSalary();
+                refreshSalaryList();
+                clearInput();
+            }
+
         }
     }
 }
