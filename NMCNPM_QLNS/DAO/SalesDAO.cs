@@ -64,7 +64,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin doanh thu. Vui lòng thử lại", "WARNING");
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin doanh thu. Vui lòng thử lại sau", "WARNING");
                 string querySub = "INSERT INTO DOANHTHU VALUES ( CAST( @ngaythangnam AS DATE) , 0 , 0 , 0 , 0 , 0 , 0 , N'Hoàn Thành' ) ";
                 int dataSub = DataProvider.Instance.ExecuteNonQuery(querySub ,new object[] {dateNow});
                 if (dataSub > 0)
@@ -148,7 +148,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin doanh thu", "WARNING");
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin doanh thu. Vui lòng thử lại sau", "WARNING");
             }
         }
         public DataTable exportMonthSaleList(string monthPrev,string monthAfter)

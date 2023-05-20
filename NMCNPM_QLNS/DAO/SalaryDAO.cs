@@ -82,7 +82,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Đã xảy ra lỗi khi cập nhật lương","WARNING");
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật lương. Vui lòng thử lại sau","WARNING");
             }
         }
         public void resetSalary()
@@ -97,7 +97,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Đã xảy ra lỗi khi cập nhật lương", "WARNING");
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật lương. Vui lòng thử lại sau", "WARNING");
             }
         }
     }

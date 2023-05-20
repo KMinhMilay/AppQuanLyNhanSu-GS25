@@ -85,7 +85,7 @@ namespace NMCNPM_QLNS.DAO
                 }
                 else
                 {
-                    MessageBox.Show("Đã xảy ra lỗi khi thêm thông tin sản phẩm mới");
+                    MessageBox.Show("Đã xảy ra lỗi khi thêm thông tin sản phẩm mới. Vui lòng thử lại sau","WARNING");
                     return false;
                 }
             }
@@ -100,7 +100,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin sản phẩm", "WARNING");
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin sản phẩm. Vui lòng thử lại sau", "WARNING");
             }
         }
         public void deleteProduct(string  sanphamID)
@@ -113,7 +113,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Xóa thông tin sản phẩm thất bại");
+                MessageBox.Show("Xóa thông tin sản phẩm thất bại. Vui lòng thử lại sau","WARNING");
             }
         }
         

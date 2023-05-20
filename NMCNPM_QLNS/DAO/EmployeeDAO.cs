@@ -96,7 +96,7 @@ namespace NMCNPM_QLNS.DAO
                 }
                 else
                 {
-                    MessageBox.Show("Đã xảy ra lỗi khi thêm thông tin nhân viên");
+                    MessageBox.Show("Đã xảy ra lỗi khi thêm thông tin nhân viên. Vui lòng thử lại sau","WARNING");
 
                     return false;
                 }
@@ -122,7 +122,7 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin nhân viên","WARNING");
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin nhân viên. Vui lòng thử lại sau","WARNING");
             }
         }
         public void loadSpecificEmployeeList(ListView listView,int type,string sreachValue)
