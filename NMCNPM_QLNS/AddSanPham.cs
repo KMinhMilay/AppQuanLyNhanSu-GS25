@@ -40,21 +40,25 @@ namespace NMCNPM_QLNS
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if(Int64.TryParse(IDtxb.Text,out _)==false || Int64.TryParse(Moneytxb.Text, out _) == false || Int64.TryParse(CKtxb.Text, out _) == false || IDtxb.ForeColor == Color.Red)
+            if(Int64.TryParse(IDtxb.Text,out _)==true || Int64.Parse(Moneytxb.Text) <0 || Int64.Parse(CKtxb.Text) < 0 || Int64.Parse(CKtxb.Text)>Int64.Parse(Moneytxb.Text) || IDtxb.ForeColor == Color.Red)
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng. Có thể bạn đã nhập sai ở đâu đó");
+                MessageBox.Show("Vui lòng nhập đúng định dạng");
+                clearInput();
 
-            }
-            if (string.IsNullOrWhiteSpace(IDtxb.Text)|| string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text)|| string.IsNullOrWhiteSpace(CKtxb.Text))
-            {
-                MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
             }
             else
             {
-                
-                if(ProductDAO.Instance.addNewProduct(IDtxb.Text.Trim(),Nametxb.Text.Trim(),Moneytxb.Text.Trim(),CKtxb.Text.Trim(),NCCtxb.Text.Trim())==true)
+                if (string.IsNullOrWhiteSpace(IDtxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text))
                 {
-                    clearInput();
+                    MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
+                }
+                else
+                {
+
+                    if (ProductDAO.Instance.addNewProduct(IDtxb.Text.Trim(), Nametxb.Text.Trim(), Moneytxb.Text.Trim(), CKtxb.Text.Trim(), NCCtxb.Text.Trim()) == true)
+                    {
+                        clearInput();
+                    }
                 }
             }
         }

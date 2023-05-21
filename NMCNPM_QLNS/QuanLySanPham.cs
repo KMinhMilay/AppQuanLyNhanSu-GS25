@@ -274,7 +274,7 @@ namespace NMCNPM_QLNS
             if (result == DialogResult.Yes)
             
             {
-                if(Int64.TryParse(Moneytxb.Text,out _)==false||Int64.TryParse(CKtxb.Text,out _)==false)
+                if(Int64.Parse(Moneytxb.Text) <0 || Int64.Parse(CKtxb.Text)<0)
                 {
                     MessageBox.Show("Vui lòng nhập đúng định dạng giá tiền hay chiết khấu");
                 }
@@ -318,6 +318,11 @@ namespace NMCNPM_QLNS
         }
 
         private void Moneytxb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CKtxb_TextChanged(object sender, EventArgs e)
         {
 
         }

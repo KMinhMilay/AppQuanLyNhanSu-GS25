@@ -294,15 +294,23 @@ namespace NMCNPM_QLNS
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về lương của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (Int64.Parse(Luongtxb.Text) < 0 || Int64.Parse(TangCatxb.Text) < 0)
             {
-                SalaryDAO.Instance.changeSalary(Luongtxb.Text.Trim(),TangCatxb.Text.Trim(),IDtxb.Text.Trim());
+                MessageBox.Show("Vui lòng nhập đúng định số giờ công hay số giờ tăng ca");
 
-                refreshSalaryList();
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về lương của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                clearInput();
+                if (result == DialogResult.Yes)
+                {
+                    SalaryDAO.Instance.changeSalary(Luongtxb.Text.Trim(), TangCatxb.Text.Trim(), IDtxb.Text.Trim());
+
+                    refreshSalaryList();
+
+                    clearInput();
+                }
             }
         }
 

@@ -101,7 +101,12 @@ namespace NMCNPM_QLNS
         {
             if(string.IsNullOrWhiteSpace(IDtbx.Text)||IDtbx.Text==applyID()||IDtbx.TextLength==6||IDtbx.ForeColor == Color.Red || string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
             {
+                if (IDtbx.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng ID");
 
+                }
+                else
                 MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
             }
             else
