@@ -46,9 +46,8 @@ namespace NMCNPM_QLNS
                 clearInput();
 
             }
-            else
-            {
-                if (string.IsNullOrWhiteSpace(IDtxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text))
+
+                else if (string.IsNullOrWhiteSpace(IDtxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text))
                 {
                     MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
                 }
@@ -60,7 +59,7 @@ namespace NMCNPM_QLNS
                         clearInput();
                     }
                 }
-            }
+
         }
 
         private void IDtxb_TextChanged(object sender, EventArgs e)

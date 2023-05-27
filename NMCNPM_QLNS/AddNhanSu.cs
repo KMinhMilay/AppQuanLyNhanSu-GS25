@@ -99,15 +99,37 @@ namespace NMCNPM_QLNS
         //string nvID,string ChucVu,string nvHo,string nvTen,string nvGioiTinh, string nvQueQuan, string nvNgaySinh, string TTNV, string HopDong
         private void button3_Click(object sender, EventArgs e) // nut them
         {
-            if(string.IsNullOrWhiteSpace(IDtbx.Text)||IDtbx.Text==applyID()||IDtbx.TextLength==6||IDtbx.ForeColor == Color.Red || string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
+            bool checkHo = true;
+            bool checkTen = true;
+            string[] stringArray = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+            foreach (string x in stringArray)
+            {
+                if (Hotxb.Text.Contains(x))
+                {
+                    checkHo = false;
+                }
+                if (Tentxb.Text.Contains(x))
+                {
+                    checkTen = false;
+                }
+            }
+            if (checkHo == false)
+            {
+                MessageBox.Show("Họ nhân viên không được chứa số", "Cảnh báo");
+            }
+            else if (checkTen == false)
+            {
+                MessageBox.Show("Tên nhân viên không được chứa số", "Cảnh báo");
+            }
+            else if (string.IsNullOrWhiteSpace(IDtbx.Text)||IDtbx.Text==applyID()||IDtbx.TextLength==6||IDtbx.ForeColor == Color.Red || string.IsNullOrWhiteSpace(ChucVucbx.Text) || string.IsNullOrWhiteSpace(Hotxb.Text) || string.IsNullOrWhiteSpace(Tentxb.Text) || string.IsNullOrWhiteSpace(GioiTinhtxb.Text) || string.IsNullOrWhiteSpace(QueQuancbx.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text) || string.IsNullOrWhiteSpace(Notetxb.Text) || string.IsNullOrWhiteSpace(HopDongtxb.Text))
             {
                 if (IDtbx.ForeColor == Color.Red)
                 {
-                    MessageBox.Show("Vui lòng nhập đúng định dạng ID");
+                    MessageBox.Show("Vui lòng nhập đúng định dạng ID","Cảnh báo");
 
                 }
                 else
-                MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
+                MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết", "Cảnh báo");
             }
             else
             {
