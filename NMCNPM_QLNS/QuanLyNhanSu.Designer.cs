@@ -52,7 +52,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Notecbx = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Sreachtxb = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -295,14 +295,14 @@
             this.Notecbx.Size = new System.Drawing.Size(248, 28);
             this.Notecbx.TabIndex = 24;
             // 
-            // textBox5
+            // Sreachtxb
             // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(298, 436);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(221, 27);
-            this.textBox5.TabIndex = 25;
+            this.Sreachtxb.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sreachtxb.ForeColor = System.Drawing.Color.DimGray;
+            this.Sreachtxb.Location = new System.Drawing.Point(298, 436);
+            this.Sreachtxb.Name = "Sreachtxb";
+            this.Sreachtxb.Size = new System.Drawing.Size(221, 27);
+            this.Sreachtxb.TabIndex = 25;
             // 
             // button1
             // 
@@ -337,7 +337,7 @@
             this.panel1.Controls.Add(this.DeleteBtn);
             this.panel1.Controls.Add(this.AddBtn);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.Sreachtxb);
             this.panel1.Controls.Add(this.Notecbx);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
@@ -606,7 +606,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox Notecbx;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Sreachtxb;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ChangeBtn;

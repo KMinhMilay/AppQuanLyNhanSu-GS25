@@ -295,6 +295,7 @@
             this.TangCatxb.Name = "TangCatxb";
             this.TangCatxb.Size = new System.Drawing.Size(239, 27);
             this.TangCatxb.TabIndex = 20;
+            this.TangCatxb.TextChanged += new System.EventHandler(this.TangCatxb_TextChanged);
             // 
             // label9
             // 
@@ -313,6 +314,7 @@
             this.Luongtxb.Name = "Luongtxb";
             this.Luongtxb.Size = new System.Drawing.Size(239, 27);
             this.Luongtxb.TabIndex = 18;
+            this.Luongtxb.TextChanged += new System.EventHandler(this.Luongtxb_TextChanged);
             // 
             // label10
             // 

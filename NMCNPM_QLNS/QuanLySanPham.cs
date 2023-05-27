@@ -259,8 +259,15 @@ namespace NMCNPM_QLNS
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            productListView.Items.Clear();
-            ProductDAO.Instance.loadSpecifiProductList(productListView,type,Sreachtxb.Text);
+            if (Sreachtxb.Text == "")
+            {
+                MessageBox.Show("Bạn chưa điền thông tin cần tìm", "Cảnh báo");
+            }
+            else
+            {
+                productListView.Items.Clear();
+                ProductDAO.Instance.loadSpecifiProductList(productListView, type, Sreachtxb.Text);
+            }
         }
         private void button5_Click(object sender, EventArgs e)
         {

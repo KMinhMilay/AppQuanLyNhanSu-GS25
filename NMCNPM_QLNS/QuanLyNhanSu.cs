@@ -54,7 +54,7 @@ namespace NMCNPM_QLNS
             GioiTinhtxb.Clear();
             Hotxb.Clear();
             Tentxb.Clear();
-            textBox5.Clear();
+            Sreachtxb.Clear();
             dateTimePickerNgaySinh.Value = DateTime.Now;
             rdNam.Checked = false;
             rdNu.Checked = false;   
@@ -382,8 +382,16 @@ namespace NMCNPM_QLNS
         }
         private void button1_Click(object sender, EventArgs e) // tim kiem
         {
-            employeeListView.Items.Clear();
-            EmployeeDAO.Instance.loadSpecificEmployeeList(employeeListView, type, textBox5.Text);
+            if (Sreachtxb.Text == "")
+            {
+                MessageBox.Show("Bạn chưa điền thông tin cần tìm", "Cảnh báo");
+            }
+            else
+            {
+                employeeListView.Items.Clear();
+                EmployeeDAO.Instance.loadSpecificEmployeeList(employeeListView, type, Sreachtxb.Text);
+            }
+
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {

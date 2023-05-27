@@ -289,24 +289,29 @@ namespace NMCNPM_QLNS
         }
         private void button1_Click(object sender, EventArgs e) //timkiem
         {
-            SalaryListView.Items.Clear();
-            SalaryDAO.Instance.loadSpecificSalaryList(SalaryListView,type,Searchtxb.Text);
+            if (Searchtxb.Text == "")
+            {
+                MessageBox.Show("Bạn chưa điền thông tin cần tìm", "Cảnh báo");
+            }
+            else
+            {
+                SalaryListView.Items.Clear();
+                SalaryDAO.Instance.loadSpecificSalaryList(SalaryListView, type, Searchtxb.Text);
+            }
+
         }
         private void button4_Click(object sender, EventArgs e)
         {
             if (Int64.Parse(Luongtxb.Text) < 0 || Int64.Parse(TangCatxb.Text) < 0)
             {
                 MessageBox.Show("Vui lòng nhập đúng định số giờ công hay số giờ tăng ca", "Cảnh báo");
+            }
 
-            }
-            else if (String.IsNullOrEmpty(Luongtxb.Text)||String.IsNullOrEmpty(TangCatxb.Text))
-            {
-                MessageBox.Show("Số giờ công hay số giờ tăng ca không được để trống","Cảnh báo");
-            }
-            else if(Int64.TryParse(Luongtxb.Text,out _)==false||Int64.TryParse(TangCatxb.Text,out _) == false)
+            else if (Int64.TryParse(Luongtxb.Text, out _) == false || Int64.TryParse(TangCatxb.Text, out _) == false)
             {
                 MessageBox.Show("Số giờ công hay số giờ tăng ca không được chứa chữ cái hay kí tự", "Cảnh báo");
             }
+
             else
             {
                 DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về lương của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -337,6 +342,29 @@ namespace NMCNPM_QLNS
                 clearInput();
             }
 
+        }
+
+        private void Luongtxb_TextChanged(object sender, EventArgs e)
+        {
+            string prev = Luongtxb.Text;
+            if(string.IsNullOrEmpty(Luongtxb.Text.Trim())) { Luongtxb.Text = "0"; }
+            else if (Int64.TryParse(Luongtxb.Text,out _)==false)
+            {
+                MessageBox.Show("Số giờ công hay số giờ tăng ca không được chứa chữ cái hay kí tự", "Cảnh báo");
+                Luongtxb.Text = "0";
+            }
+            
+        }
+
+        private void TangCatxb_TextChanged(object sender, EventArgs e)
+        {
+            string prev =  TangCatxb.Text;
+            if (string.IsNullOrEmpty(TangCatxb.Text.Trim())) { TangCatxb.Text = "0"; }
+            else if (Int64.TryParse(TangCatxb.Text,out _)==false)
+            {
+                MessageBox.Show("Số giờ công hay số giờ tăng ca không được chứa chữ cái hay kí tự", "Cảnh báo");
+                TangCatxb.Text="0";
+            }
         }
     }
 }
