@@ -135,7 +135,7 @@ namespace NMCNPM_QLNS
 
             int columnStart = 1;
 
-            int rowEnd = rowStart + dataTable.Rows.Count - 2;
+            int rowEnd = rowStart + dataTable.Rows.Count - 1;
 
             int columnEnd = dataTable.Columns.Count;
 
@@ -276,7 +276,11 @@ namespace NMCNPM_QLNS
             {
                 if(Int64.Parse(Moneytxb.Text) <0 || Int64.Parse(CKtxb.Text)<0)
                 {
-                    MessageBox.Show("Vui lòng nhập đúng định dạng giá tiền hay chiết khấu");
+                    MessageBox.Show("Vui lòng nhập giá tiền dương", "Cảnh báo");
+                }
+                else if (Int64.TryParse(Moneytxb.Text,out _)==false|| Int64.TryParse(CKtxb.Text, out _) == false)
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng giá tiền hay chiết khấu", "Cảnh báo");
                 }
                 else
                 {

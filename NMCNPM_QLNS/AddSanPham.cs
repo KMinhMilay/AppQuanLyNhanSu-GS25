@@ -40,7 +40,7 @@ namespace NMCNPM_QLNS
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if(Int64.TryParse(IDtxb.Text,out _)==true || Int64.Parse(Moneytxb.Text) <0 || Int64.Parse(CKtxb.Text) < 0 || Int64.Parse(CKtxb.Text)>Int64.Parse(Moneytxb.Text) || IDtxb.ForeColor == Color.Red)
+            if(Int64.TryParse(IDtxb.Text,out _)==false || Int64.Parse(Moneytxb.Text) <0 || Int64.Parse(CKtxb.Text) < 0 || Int64.Parse(CKtxb.Text)>Int64.Parse(Moneytxb.Text) || IDtxb.ForeColor == Color.Red)
             {
                 MessageBox.Show("Vui lòng nhập đúng định dạng");
                 clearInput();

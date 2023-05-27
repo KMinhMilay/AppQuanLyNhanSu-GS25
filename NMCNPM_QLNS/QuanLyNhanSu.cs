@@ -250,7 +250,7 @@ namespace NMCNPM_QLNS
 
             int columnStart = 1;
 
-            int rowEnd = rowStart + dataTable.Rows.Count - 2;
+            int rowEnd = rowStart + dataTable.Rows.Count - 1;
 
             int columnEnd = dataTable.Columns.Count;
 
@@ -403,8 +403,47 @@ namespace NMCNPM_QLNS
             type=3;
         }
         private void button4_Click(object sender, EventArgs e)
+            
         {
-            if (DateTime.Today.Year-dateTimePickerNgaySinh.Value.Year >= 18)
+            bool checkHo = true;
+            bool checkTen = true;
+            string[] stringArray = { "1","2","3","4","5","6","7","8","9","0" };
+            foreach (string x in stringArray)
+            {
+                if (Hotxb.Text.Contains(x))
+                {
+                    checkHo = false;
+                }
+                if (Tentxb.Text.Contains(x)) 
+                { 
+                    checkTen = false; 
+                }
+            }
+            if (DateTime.Today.Year-dateTimePickerNgaySinh.Value.Year < 18||String.IsNullOrEmpty( Hotxb.Text)|| String.IsNullOrEmpty(Tentxb.Text))
+            {
+                if(DateTime.Today.Year - dateTimePickerNgaySinh.Value.Year < 18)
+                {
+                    MessageBox.Show("Nhân viên này bạn nhập tuổi dưới 18. Mời nhập lại", "Cảnh báo");
+                    dateTimePickerNgaySinh.Value = DateTime.Now;
+                }
+                else
+                {
+                    MessageBox.Show("Họ hoặc tên của bạn không được phép trống hoặc chưa số", "Cảnh báo");
+                }
+            }
+            else if (checkHo == false)
+            {
+                MessageBox.Show("Họ nhân viên không được chứa số. Mời nhập lại", "Cảnh báo");
+                
+
+            }
+            else if (checkTen == false)
+            {
+                MessageBox.Show("Tên nhân viên không được chứa số. Mời nhập lại", "Cảnh báo");
+
+                
+            }
+            else
             {
                 DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về thông tin của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo);
 
@@ -414,11 +453,6 @@ namespace NMCNPM_QLNS
                     refreshEmployeeList();
                     clearInput();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Nhân viên này bạn nhập tuổi dưới 18. Mời nhập lại", "Cảnh báo");
-                dateTimePickerNgaySinh.Value = DateTime.Now;
             }
             
         }

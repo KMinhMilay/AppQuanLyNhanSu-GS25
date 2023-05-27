@@ -185,7 +185,7 @@ namespace NMCNPM_QLNS
 
             int columnStart = 1;
 
-            int rowEnd = rowStart + dataTable.Rows.Count - 2;
+            int rowEnd = rowStart + dataTable.Rows.Count - 1;
 
             int columnEnd = dataTable.Columns.Count;
 
@@ -296,8 +296,16 @@ namespace NMCNPM_QLNS
         {
             if (Int64.Parse(Luongtxb.Text) < 0 || Int64.Parse(TangCatxb.Text) < 0)
             {
-                MessageBox.Show("Vui lòng nhập đúng định số giờ công hay số giờ tăng ca");
+                MessageBox.Show("Vui lòng nhập đúng định số giờ công hay số giờ tăng ca", "Cảnh báo");
 
+            }
+            else if (String.IsNullOrEmpty(Luongtxb.Text)||String.IsNullOrEmpty(TangCatxb.Text))
+            {
+                MessageBox.Show("Số giờ công hay số giờ tăng ca không được để trống","Cảnh báo");
+            }
+            else if(Int64.TryParse(Luongtxb.Text,out _)==false||Int64.TryParse(TangCatxb.Text,out _) == false)
+            {
+                MessageBox.Show("Số giờ công hay số giờ tăng ca không được chứa chữ cái hay kí tự", "Cảnh báo");
             }
             else
             {
