@@ -285,7 +285,10 @@ namespace NMCNPM_QLNS
             {
                 MessageBox.Show("Vui lòng nhập đơn giá không dưới 1 nghìn đồng và trên 10 triệu đồng", "Cảnh báo");
 
-
+            }
+            else if (Int64.Parse(CKtxb.Text) > Int64.Parse(Moneytxb.Text))
+            {
+                MessageBox.Show("Bạn đã nhập giá trị chiết khấu lớn hơn đơn giá ", "Cảnh báo");
             }
             else if (Int64.Parse(CKtxb.Text) < 0|| Int64.Parse(CKtxb.Text) > 10000000)
             {
