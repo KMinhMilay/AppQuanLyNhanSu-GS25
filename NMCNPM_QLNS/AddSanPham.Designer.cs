@@ -80,6 +80,7 @@
             this.NCCtxb.Name = "NCCtxb";
             this.NCCtxb.Size = new System.Drawing.Size(300, 27);
             this.NCCtxb.TabIndex = 41;
+            this.NCCtxb.TextChanged += new System.EventHandler(this.NCCtxb_TextChanged);
             // 
             // label9
             // 
@@ -98,6 +99,7 @@
             this.CKtxb.Name = "CKtxb";
             this.CKtxb.Size = new System.Drawing.Size(300, 27);
             this.CKtxb.TabIndex = 39;
+            this.CKtxb.TextChanged += new System.EventHandler(this.CKtxb_TextChanged);
             // 
             // label10
             // 
@@ -116,6 +118,7 @@
             this.Moneytxb.Name = "Moneytxb";
             this.Moneytxb.Size = new System.Drawing.Size(297, 27);
             this.Moneytxb.TabIndex = 37;
+            this.Moneytxb.TextChanged += new System.EventHandler(this.Moneytxb_TextChanged);
             // 
             // label4
             // 

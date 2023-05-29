@@ -14,6 +14,8 @@ namespace NMCNPM_QLNS
     public partial class QuanLyLuong : Form
     {
         int type = 0;
+        string giolam="0";
+        string tangca="0";
         public QuanLyLuong()
         {
             InitializeComponent();
@@ -234,7 +236,9 @@ namespace NMCNPM_QLNS
                 Tentxb.Text = SalaryListView.FocusedItem.SubItems[3].Text;
                 GioiTinhtxb.Text = SalaryListView.FocusedItem.SubItems[4].Text;
                 Luongtxb.Text = SalaryListView.FocusedItem.SubItems[5].Text;
+                giolam = SalaryListView.FocusedItem.SubItems[5].Text;
                 TangCatxb.Text = SalaryListView.FocusedItem.SubItems[6].Text;
+                tangca = SalaryListView.FocusedItem.SubItems[6].Text;
                 TongLuongtxb.Text = SalaryListView.FocusedItem.SubItems[7].Text;
                 Notetxb.Text = SalaryListView.FocusedItem.SubItems[8].Text;
 
@@ -305,13 +309,19 @@ namespace NMCNPM_QLNS
             if (Int64.Parse(Luongtxb.Text) < 0 || Int64.Parse(TangCatxb.Text) < 0)
             {
                 MessageBox.Show("Vui lòng nhập đúng định số giờ công hay số giờ tăng ca", "Cảnh báo");
-            }
 
+            }
+            else if (Int64.Parse(Luongtxb.Text) > 720 || Int64.Parse(TangCatxb.Text) > 720)
+            {
+                MessageBox.Show("Vui lòng không nhập số tiếng quá 720 giờ", "Cảnh báo");
+
+            }
             else if (Int64.TryParse(Luongtxb.Text, out _) == false || Int64.TryParse(TangCatxb.Text, out _) == false)
             {
                 MessageBox.Show("Số giờ công hay số giờ tăng ca không được chứa chữ cái hay kí tự", "Cảnh báo");
+                Luongtxb.Text = giolam;
+                TangCatxb.Text = tangca;
             }
-
             else
             {
                 DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về lương của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -346,24 +356,22 @@ namespace NMCNPM_QLNS
 
         private void Luongtxb_TextChanged(object sender, EventArgs e)
         {
-            string prev = Luongtxb.Text;
             if(string.IsNullOrEmpty(Luongtxb.Text.Trim())) { Luongtxb.Text = "0"; }
             else if (Int64.TryParse(Luongtxb.Text,out _)==false)
             {
                 MessageBox.Show("Số giờ công hay số giờ tăng ca không được chứa chữ cái hay kí tự", "Cảnh báo");
-                Luongtxb.Text = "0";
+                Luongtxb.Text = giolam;
             }
             
         }
 
         private void TangCatxb_TextChanged(object sender, EventArgs e)
         {
-            string prev =  TangCatxb.Text;
             if (string.IsNullOrEmpty(TangCatxb.Text.Trim())) { TangCatxb.Text = "0"; }
             else if (Int64.TryParse(TangCatxb.Text,out _)==false)
             {
                 MessageBox.Show("Số giờ công hay số giờ tăng ca không được chứa chữ cái hay kí tự", "Cảnh báo");
-                TangCatxb.Text="0";
+                TangCatxb.Text=tangca;
             }
         }
     }

@@ -40,16 +40,26 @@ namespace NMCNPM_QLNS
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if(Int64.TryParse(IDtxb.Text,out _)==false || Int64.Parse(Moneytxb.Text) <0 || Int64.Parse(CKtxb.Text) < 0 || Int64.Parse(CKtxb.Text)>Int64.Parse(Moneytxb.Text) || IDtxb.ForeColor == Color.Red)
+            if(Int64.TryParse(IDtxb.Text,out _)==false || IDtxb.ForeColor == Color.Red)
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng");
+                MessageBox.Show("Vui lòng nhập lại ID do trùng ID hoặc định dạng ID ko đúng","Cảnh báo");
                 clearInput();
-
+            }else if(Int64.Parse(CKtxb.Text) > Int64.Parse(Moneytxb.Text)) {
+                MessageBox.Show("Bạn đã nhập giá trị chiết khấu lớn hơn đơn giá ", "Cảnh báo");
+                clearInput();
             }
-
+            else if (Int64.Parse(Moneytxb.Text) < 1000 || Int64.Parse(Moneytxb.Text) > 10000000 )
+            {
+                MessageBox.Show("Vui lòng nhập đơn giá sản phẩm không dưới 1 nghìn đồng và trên 10 triệu đồng", "Cảnh báo");
+                clearInput();
+            }else if (Int64.Parse(CKtxb.Text) < 0 || Int64.Parse(CKtxb.Text) > 10000000)
+            {
+                MessageBox.Show("Vui lòng nhập chiết khẩu sản phẩm không dưới 0 đồng và trên 10 triệu đồng", "Cảnh báo");
+                clearInput();
+            }
                 else if (string.IsNullOrWhiteSpace(IDtxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text))
                 {
-                    MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết");
+                    MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết","Cảnh báo");
                 }
                 else
                 {
@@ -64,16 +74,71 @@ namespace NMCNPM_QLNS
 
         private void IDtxb_TextChanged(object sender, EventArgs e)
         {
-            if (existSanPham()|| int.TryParse(IDtxb.Text, out _) == false)
+            if(Int64.TryParse(IDtxb.Text, out _) == false)
             {
-                IDtxb.Text.Trim();
-                IDtxb.ForeColor = Color.Red;
+                if (IDtxb.Text == "")
+                {
+                    IDtxb.Text = "10000";
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng mã sản phẩm chỉ chứa số", "Cảnh báo");
+                    clearInput();
+                }
+
             }
             else
             {
-                IDtxb.Text.Trim();
-                IDtxb.ForeColor = Color.Green;
+                if (existSanPham())
+                {
+
+                    IDtxb.ForeColor = Color.Red;
+                }
+                else
+                {
+
+                    IDtxb.ForeColor = Color.Green;
+                }
             }
+
+        }
+
+        private void CKtxb_TextChanged(object sender, EventArgs e)
+        {
+            if (Int64.TryParse(CKtxb.Text, out _) == false)
+            {
+                if (CKtxb.Text == "")
+                {
+                    CKtxb.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng chiết khấu", "Cảnh báo");
+                    CKtxb.Text = "0";
+                }
+
+            }
+        }
+
+        private void NCCtxb_TextChanged(object sender, EventArgs e)
+        {
+            if (Int64.TryParse(Moneytxb.Text, out _) == false)
+            {
+                if (Moneytxb.Text == "")
+                {
+                    Moneytxb.Text = "1000";
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng giá tiền", "Cảnh báo");
+                    Moneytxb.Text = "1000";
+                }
+
+            }
+        }
+
+        private void Moneytxb_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

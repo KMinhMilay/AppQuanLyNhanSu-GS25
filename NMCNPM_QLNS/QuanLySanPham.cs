@@ -14,6 +14,8 @@ namespace NMCNPM_QLNS
     public partial class Form6 : Form
     {
         int type = 1;
+        string giatien="0";
+        string chietkhau="0";
         public Form6()
         {
             InitializeComponent();
@@ -226,7 +228,9 @@ namespace NMCNPM_QLNS
                 IDtxb.Text = productListView.FocusedItem.SubItems[0].Text;
                 Nametxb.Text = productListView.FocusedItem.SubItems[1].Text;
                 Moneytxb.Text = productListView.FocusedItem.SubItems[2].Text;
+                giatien = productListView.FocusedItem.SubItems[2].Text;
                 CKtxb.Text = productListView.FocusedItem.SubItems[3].Text;
+                chietkhau = productListView.FocusedItem.SubItems[3].Text;
                 NCCtxb.Text = productListView.FocusedItem.SubItems[4].Text;
             }
         }
@@ -276,28 +280,40 @@ namespace NMCNPM_QLNS
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về giá và chiết khấu sản phẩm của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo , MessageBoxIcon.Question);
 
-            if (result == DialogResult.Yes)
-            
+            if (Int64.Parse(Moneytxb.Text) < 1000 || Int64.Parse(Moneytxb.Text) > 10000000)
             {
-                if(Int64.Parse(Moneytxb.Text) <0 || Int64.Parse(CKtxb.Text)<0)
-                {
-                    MessageBox.Show("Vui lòng nhập giá tiền dương", "Cảnh báo");
-                }
-                else if (Int64.TryParse(Moneytxb.Text,out _)==false|| Int64.TryParse(CKtxb.Text, out _) == false)
-                {
-                    MessageBox.Show("Vui lòng nhập đúng định dạng giá tiền hay chiết khấu", "Cảnh báo");
-                }
-                else
-                {
-                    ProductDAO.Instance.changeProductInfo(Moneytxb.Text.Trim(), CKtxb.Text.Trim(), IDtxb.Text.Trim());
+                MessageBox.Show("Vui lòng nhập đơn giá không dưới 1 nghìn đồng và trên 10 triệu đồng", "Cảnh báo");
 
-                    refreshProductList();
 
-                    clearInput();
+            }
+            else if (Int64.Parse(CKtxb.Text) < 0|| Int64.Parse(CKtxb.Text) > 10000000)
+            {
+                MessageBox.Show("Vui lòng nhập chiết khấu không dưới 0 đồng và trên 10 triệu đồng", "Cảnh báo");
+            }
+            else if (Int64.TryParse(Moneytxb.Text, out _) == false || Int64.TryParse(CKtxb.Text, out _) == false)
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng giá tiền hay chiết khấu", "Cảnh báo");
+                CKtxb.Text = chietkhau;
+                Moneytxb.Text = giatien;
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu thay đổi về giá và chiết khấu sản phẩm của nhân viên này không", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+
+                {
+                    {
+                        ProductDAO.Instance.changeProductInfo(Moneytxb.Text.Trim(), CKtxb.Text.Trim(), IDtxb.Text.Trim());
+
+                        refreshProductList();
+
+                        clearInput();
+                    }
                 }
             }
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -330,12 +346,36 @@ namespace NMCNPM_QLNS
 
         private void Moneytxb_TextChanged(object sender, EventArgs e)
         {
+            if(Int64.TryParse(Moneytxb.Text, out _) == false)
+            {
+                if (string.IsNullOrWhiteSpace(Moneytxb.Text))
+                {
+                    Moneytxb.Text = "1000";
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng giá tiền", "Cảnh báo");
+                    Moneytxb.Text = giatien;
+                }
 
+            }
         }
 
         private void CKtxb_TextChanged(object sender, EventArgs e)
         {
+            if (Int64.TryParse(CKtxb.Text, out _) == false)
+            {
+                if (string.IsNullOrWhiteSpace(CKtxb.Text))
+                {
+                    CKtxb.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng chiết khấu", "Cảnh báo");
+                    CKtxb.Text = chietkhau;
+                }
 
+            }
         }
     }
 }

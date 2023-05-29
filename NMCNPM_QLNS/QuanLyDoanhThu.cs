@@ -13,6 +13,7 @@ namespace NMCNPM_QLNS
 {
     public partial class QuanLyDoanhThu : Form
     {
+        string danhan="0";
         public QuanLyDoanhThu()
         {
             InitializeComponent();
@@ -394,7 +395,7 @@ namespace NMCNPM_QLNS
             {
                 DaNhantxb.Text = salesListView.FocusedItem.SubItems[5].Text.ToString();
             }
-
+            danhan= salesListView.FocusedItem.SubItems[5].Text.ToString();
 
             if (salesListView.FocusedItem.SubItems[6].Text.ToString() == null)
             {
@@ -410,37 +411,49 @@ namespace NMCNPM_QLNS
         }
         private void DaNhantxb_TextChanged(object sender, EventArgs e)
         {
-            //if (DaNhantxb.Text == "")
-            //{
-            //    DaNhantxb.Text = "0";
-            //}
-            //if (DaNhantxb.Text == "-")
-            //{
-            //    DaNhantxb.Text = "0";
-            //}
-            //if(Int64.TryParse(DaNhantxb.Text, out _) == false)
-            //{
-            //    DaNhantxb.Text = "0";
-            //}
-            //if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text)||Int64.TryParse(DaNhantxb.Text,out _)==false)
-            //{
-            //    MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
-            //    DaNhantxb.Text = "0";
+            if (Int64.TryParse(DaNhantxb.Text, out _) == false)
+            {
+                if (string.IsNullOrWhiteSpace(DaNhantxb.Text))
+                {
+                    DaNhantxb.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng chiết khấu", "Cảnh báo");
+                    DaNhantxb.Text = danhan;
+                }
+                //if (DaNhantxb.Text == "")
+                //{
+                //    DaNhantxb.Text = "0";
+                //}
+                //if (DaNhantxb.Text == "-")
+                //{
+                //    DaNhantxb.Text = "0";
+                //}
+                //if(Int64.TryParse(DaNhantxb.Text, out _) == false)
+                //{
+                //    DaNhantxb.Text = "0";
+                //}
+                //if (Int64.Parse(DaNhantxb.Text) < 0 || Int64.Parse(DaNhantxb.Text)> Int32.Parse(Totaltxb.Text)||Int64.TryParse(DaNhantxb.Text,out _)==false)
+                //{
+                //    MessageBox.Show("Bạn nhập sai hoặc quá số tiền nhận được", "WARNING");
+                //    DaNhantxb.Text = "0";
 
-            //}
-            //else
-            //{
-            //    ConThieutxb.Text = (Int64.Parse(Totaltxb.Text) - Int64.Parse(DaNhantxb.Text)).ToString();
-            //    if (Int64.Parse(ConThieutxb.Text) != 0)
-            //    {
-            //        TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Chưa hoàn thành");
-            //    }
-            //    else
-            //    {
-            //        TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Hoàn thành");
-            //    }
-            //}
+                //}
+                //else
+                //{
+                //    ConThieutxb.Text = (Int64.Parse(Totaltxb.Text) - Int64.Parse(DaNhantxb.Text)).ToString();
+                //    if (Int64.Parse(ConThieutxb.Text) != 0)
+                //    {
+                //        TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Chưa hoàn thành");
+                //    }
+                //    else
+                //    {
+                //        TTDTcbx.SelectedIndex = TTDTcbx.FindStringExact("Hoàn thành");
+                //    }
+                //}
 
+            }
         }
         private void button6_Click(object sender, EventArgs e)
         {

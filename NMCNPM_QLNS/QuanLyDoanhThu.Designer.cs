@@ -261,7 +261,6 @@
             this.ConThieutxb.Size = new System.Drawing.Size(220, 27);
             this.ConThieutxb.TabIndex = 22;
             this.ConThieutxb.Text = "0";
-            this.ConThieutxb.TextChanged += new System.EventHandler(this.ConThieutxb_TextChanged);
             // 
             // label8
             // 
@@ -506,7 +505,6 @@
             this.dateTimePickerForm.Name = "dateTimePickerForm";
             this.dateTimePickerForm.Size = new System.Drawing.Size(111, 27);
             this.dateTimePickerForm.TabIndex = 48;
-            this.dateTimePickerForm.ValueChanged += new System.EventHandler(this.dateTimePickerForm_ValueChanged);
             // 
             // label14
             // 
