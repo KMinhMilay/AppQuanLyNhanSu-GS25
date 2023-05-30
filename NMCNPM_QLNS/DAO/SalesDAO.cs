@@ -64,12 +64,12 @@ namespace NMCNPM_QLNS.DAO
             }
             else
             {
-                MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin doanh thu. Vui lòng thử lại sau", "WARNING");
+                MessageBox.Show("Có vẻ bạn chưa có doanh thu ngày mới nhất. Vui lòng đợi để chúng tôi cập nhật.","Warning");
                 string querySub = "INSERT INTO DOANHTHU VALUES ( CAST( @ngaythangnam AS DATE) , 0 , 0 , 0 , 0 , 0 , 0 , N'Hoàn Thành' ) ";
                 int dataSub = DataProvider.Instance.ExecuteNonQuery(querySub ,new object[] {dateNow});
                 if (dataSub > 0)
                 {
-                    MessageBox.Show("Chúng tôi đã thêm vào " + dateNow + " mới nhất", "Xin hãy thử lại");
+                    MessageBox.Show("Chúng tôi đã thêm vào " + dateNow + " mới nhất", "Sucess");
                 }
             }
         }
