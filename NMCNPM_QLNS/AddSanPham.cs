@@ -134,6 +134,11 @@ namespace NMCNPM_QLNS
 
         private void NCCtxb_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void Moneytxb_TextChanged(object sender, EventArgs e)
+        {
             if (Int64.TryParse(Moneytxb.Text, out _) == false)
             {
                 if (Moneytxb.Text == "")
@@ -147,11 +152,6 @@ namespace NMCNPM_QLNS
                 }
 
             }
-        }
-
-        private void Moneytxb_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
