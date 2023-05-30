@@ -40,26 +40,38 @@ namespace NMCNPM_QLNS
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if(Int64.TryParse(IDtxb.Text,out _)==false || IDtxb.ForeColor == Color.Red)
+            if (string.IsNullOrWhiteSpace(IDtxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Moneytxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text) || string.IsNullOrWhiteSpace(NCCtxb.Text))
             {
-                MessageBox.Show("Vui lòng nhập lại ID do trùng ID hoặc định dạng ID ko đúng","Cảnh báo");
-                clearInput();
-            }else if(Int64.Parse(CKtxb.Text) > Int64.Parse(Moneytxb.Text)) {
-                MessageBox.Show("Bạn đã nhập giá trị chiết khấu lớn hơn đơn giá ", "Cảnh báo");
-                clearInput();
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin sản phẩm cần thêm", "Cảnh báo");
+
             }
-            else if (Int64.Parse(Moneytxb.Text) < 1000 || Int64.Parse(Moneytxb.Text) > 10000000 )
+            else
             {
-                MessageBox.Show("Vui lòng nhập đơn giá sản phẩm không dưới 1 nghìn đồng và trên 10 triệu đồng", "Cảnh báo");
-                clearInput();
-            }else if (Int64.Parse(CKtxb.Text) < 0 || Int64.Parse(CKtxb.Text) > 10000000)
-            {
-                MessageBox.Show("Vui lòng nhập chiết khẩu sản phẩm không dưới 0 đồng và trên 10 triệu đồng", "Cảnh báo");
-                clearInput();
-            }
+
+
+                if (Int64.TryParse(IDtxb.Text, out _) == false || IDtxb.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Vui lòng nhập lại ID do trùng ID hoặc định dạng ID ko đúng", "Cảnh báo");
+                    clearInput();
+                }
+                else if (Int64.Parse(CKtxb.Text) > Int64.Parse(Moneytxb.Text))
+                {
+                    MessageBox.Show("Bạn đã nhập giá trị chiết khấu lớn hơn đơn giá ", "Cảnh báo");
+                    clearInput();
+                }
+                else if (Int64.Parse(Moneytxb.Text) < 1000 || Int64.Parse(Moneytxb.Text) > 10000000)
+                {
+                    MessageBox.Show("Vui lòng nhập đơn giá sản phẩm không dưới 1 nghìn đồng và trên 10 triệu đồng", "Cảnh báo");
+                    clearInput();
+                }
+                else if (Int64.Parse(CKtxb.Text) < 0 || Int64.Parse(CKtxb.Text) > 10000000)
+                {
+                    MessageBox.Show("Vui lòng nhập chiết khẩu sản phẩm không dưới 0 đồng và trên 10 triệu đồng", "Cảnh báo");
+                    clearInput();
+                }
                 else if (string.IsNullOrWhiteSpace(IDtxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(Nametxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text) || string.IsNullOrWhiteSpace(CKtxb.Text))
                 {
-                    MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết","Cảnh báo");
+                    MessageBox.Show("Bạn chưa điền đầy đủ các thông tin cần thiết", "Cảnh báo");
                 }
                 else
                 {
@@ -69,12 +81,12 @@ namespace NMCNPM_QLNS
                         clearInput();
                     }
                 }
-
+            }
         }
 
         private void IDtxb_TextChanged(object sender, EventArgs e)
         {
-            if(Int64.TryParse(IDtxb.Text, out _) == false)
+            if (Int64.TryParse(IDtxb.Text, out _) == false)
             {
                 if (IDtxb.Text == "")
                 {
