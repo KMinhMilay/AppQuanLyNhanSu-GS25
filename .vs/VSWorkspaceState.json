@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NMCNPM_QLNS",
+    "\\NMCNPM_QLNS\\DAO"
   ],
-  "SelectedNode": "\\QuanLyNhanSu.sln",
+  "SelectedNode": "\\NMCNPM_QLNS\\DAO\\DataProvider.cs",
   "PreviewInSolutionExplorer": false
 }
